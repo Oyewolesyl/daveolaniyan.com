@@ -64,8 +64,7 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
   gap: clamp(28px, 6vw, 82px);
   align-items: end;
-  min-height: calc(100svh - 64px);
-  padding: clamp(44px, 8vw, 104px) 0 24px;
+  padding: clamp(34px, 7vw, 82px) 0 clamp(20px, 4vw, 42px);
 }
 .eyebrow {
   color: var(--muted);
@@ -80,8 +79,8 @@ h1,
 .bio-card h2,
 .contact h2 {
   margin-top: 14px;
-  font-size: clamp(3rem, 7.2vw, 7.2rem);
-  line-height: 0.94;
+  font-size: clamp(3rem, 6.3vw, 6.2rem);
+  line-height: 0.96;
   font-weight: 790;
   letter-spacing: 0;
 }
@@ -106,8 +105,8 @@ h1,
 }
 .hero-photo img {
   width: 100%;
-  height: min(72svh, 740px);
-  min-height: 500px;
+  height: min(64svh, 660px);
+  min-height: 430px;
   object-fit: cover;
   object-position: center 35%;
 }
@@ -163,10 +162,23 @@ figcaption {
   align-content: space-between;
   text-align: left;
   white-space: normal;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+.link-board a:hover {
+  border-color: rgba(17, 16, 14, 0.34);
+  transform: translateY(-2px);
+}
+.link-board a.dark-tile {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--dark);
+  color: white;
+}
+.link-board a.dark-tile small {
+  color: rgba(255, 255, 255, 0.66);
 }
 .link-board img {
-  width: min(44%, 148px);
-  height: 42px;
+  width: min(52%, 170px);
+  height: 46px;
   object-fit: contain;
   object-position: left center;
   margin-bottom: 18px;
