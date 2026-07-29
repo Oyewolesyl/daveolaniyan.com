@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Dave Olaniyan is a product builder, software engineer, design engineer, and founder based in Abuja, Nigeria."
+      content="Dave Olaniyan is a design engineer, product builder, software engineer, and founder based in Abuja, Nigeria."
     />
     <title>Dave Olaniyan</title>
     <link rel="stylesheet" href="./styles.css" />
@@ -17,20 +17,25 @@
         <a href="#work">Work</a>
         <a href="#story">Story</a>
         <a href="#contact">Contact</a>
+        <button class="share-trigger" type="button" aria-haspopup="dialog" aria-controls="share-panel">
+          <span></span><span></span><span></span>
+          Share
+        </button>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Product Builder / Software Engineer / Design Engineer / Founder</p>
-          <h1>Product, software, design, and founder work by Dave Olaniyan.</h1>
+          <p class="eyebrow">Design Engineer / Product Builder / Founder</p>
+          <h1>Dave Olaniyan builds products, interfaces, systems, and brands.</h1>
           <p class="lead">
-            Based in Abuja, Nigeria. Founder of yesCode, yesCode Design, DealRadarNG, and co-founder of Looped Innovation.
+            Based in Abuja, Nigeria. I work across software, design, sustainability, commerce, hardware, healthcare, and real estate.
           </p>
           <div class="actions">
             <a href="#work">Open work links</a>
             <a href="mailto:daveolaniyan@gmail.com">Email Dave</a>
+            <a href="tel:+2348104190898">Call</a>
             <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X</a>
           </div>
         </div>
@@ -43,8 +48,8 @@
       <section id="work" class="work-card">
         <div class="work-head">
           <p class="eyebrow">Primary Links</p>
-          <h2>The work, without the noise.</h2>
-          <p>Fast exits into the products and studios. The page stays short; the work itself does the talking.</p>
+          <h2>Open the work.</h2>
+          <p>No long case studies here. These are the direct links people need first.</p>
         </div>
         <div class="link-board">
           <a href="https://ypod.vercel.app" target="_blank" rel="noreferrer">
@@ -86,7 +91,7 @@
             <p class="eyebrow">Software / AI / Product</p>
             <h2>Technology is the operating layer.</h2>
             <p>
-              Dave builds AI products, SaaS products, dashboards, internal tools, admin systems, automation platforms,
+              I build AI products, SaaS products, dashboards, internal tools, admin systems, automation platforms,
               PWAs, landing pages, brand systems, and production web apps.
             </p>
             <ul>
@@ -105,7 +110,7 @@
             <p class="eyebrow">Sustainability</p>
             <h2>Nature Packs came from material work, not a moodboard.</h2>
             <p>
-              Through Looped Innovation, Dave leads product, technical, and design direction for Nature Packs: sustainable
+              Through Looped Innovation, I lead product, technical, and design direction for Nature Packs: sustainable
               paper packaging produced from banana and plantain fibre.
             </p>
           </div>
@@ -124,7 +129,7 @@
             <p class="eyebrow">Real Estate</p>
             <h2>Field exposure shaped the product instinct.</h2>
             <p>
-              Dave has worked around developers, architects, engineers, estate surveyors, project managers, investors,
+              I have worked around developers, architects, engineers, estate surveyors, project managers, investors,
               buyers, and marketing teams: site inspections, construction progress tracking, reporting, research,
               land evaluation, and development lifecycle understanding.
             </p>
@@ -139,7 +144,7 @@
             <p class="eyebrow">Leadership / Rooms / Networks</p>
             <h2>The work has happened in rooms with people, not only inside screens.</h2>
             <p>
-              The record includes FES, iFair, AI Entrepreneurial Leadership Program, stakeholder sessions, public dialogue,
+              My record includes FES, iFair, AI Entrepreneurial Leadership Program, stakeholder sessions, public dialogue,
               Red Cross duty, product pitching, and founder networks.
             </p>
           </div>
@@ -159,8 +164,8 @@
           <p class="eyebrow">Profile</p>
           <h2>Dave Olaniyan</h2>
           <p>
-            Product Builder, Software Engineer, Design Engineer, and Founder with a B.Sc. in Geography and Environmental Studies.
-            Dave works by learning industries deeply and building products inside them.
+            Design Engineer, Product Builder, Software Engineer, and Founder with a B.Sc. in Geography and Environmental Studies.
+            I learn industries deeply, then build useful products inside them.
           </p>
         </div>
         <div class="bio-list">
@@ -179,14 +184,36 @@
       <section id="contact" class="contact">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Short version: Dave builds the product, the interface, the system, and the story around it.</h2>
+          <h2>Short version: I build the product, the interface, the system, and the story around it.</h2>
         </div>
         <div class="contact-links">
           <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
-          <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a>
+          <a href="tel:+2348104190898">+234 810 419 0898</a>
           <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">@daveayodeji_</a>
         </div>
       </section>
     </main>
+
+    <dialog id="share-panel" class="share-panel" aria-labelledby="share-title">
+      <div class="share-card">
+        <button class="close-share" type="button" aria-label="Close share panel">Close</button>
+        <p class="eyebrow">Share Dave's Card</p>
+        <h2 id="share-title">Scan or send the link.</h2>
+        <img
+          class="qr-code"
+          src="./assets/work/daveolaniyan-qr.png"
+          alt="QR code for daveolaniyan.com"
+        />
+        <div class="share-actions">
+          <button class="copy-link" type="button">Copy link</button>
+          <button class="native-share" type="button">Share</button>
+        </div>
+        <div class="share-contact">
+          <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
+          <a href="tel:+2348104190898">+234 810 419 0898</a>
+        </div>
+      </div>
+    </dialog>
+    <script src="./script.js"></script>
   </body>
 </html>

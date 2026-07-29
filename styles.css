@@ -38,9 +38,11 @@ p, h1, h2, figure { margin: 0; }
 .name { font-size: 0.95rem; font-weight: 780; }
 nav { display: flex; gap: 4px; }
 nav a,
+nav button,
 .actions a,
 .link-board a,
-.contact-links a {
+.contact-links a,
+.share-actions button {
   display: inline-flex;
   min-height: 36px;
   align-items: center;
@@ -53,7 +55,25 @@ nav a,
   font-weight: 760;
   white-space: nowrap;
 }
-nav a { border-color: transparent; background: transparent; }
+nav a,
+nav button {
+  border-color: transparent;
+  background: transparent;
+}
+button {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.share-trigger {
+  gap: 7px;
+}
+.share-trigger span {
+  display: block;
+  width: 13px;
+  height: 2px;
+  background: currentColor;
+}
 
 main {
   width: min(1380px, calc(100% - 32px));
@@ -298,6 +318,71 @@ figcaption {
   border-color: rgba(255,255,255,0.24);
   background: rgba(255,255,255,0.08);
 }
+.share-panel {
+  width: min(420px, calc(100% - 24px));
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+}
+.share-panel::backdrop {
+  background: rgba(12, 12, 10, 0.64);
+}
+.share-card {
+  position: relative;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+.share-card h2 {
+  margin: 8px 70px 16px 0;
+  font-size: clamp(1.8rem, 8vw, 3rem);
+  line-height: 0.98;
+}
+.close-share {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: white;
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+.qr-code {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+}
+.share-actions,
+.share-contact {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+.share-actions {
+  grid-template-columns: 1fr 1fr;
+}
+.share-actions button {
+  width: 100%;
+  background: white;
+}
+.share-contact a {
+  min-height: 38px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 720;
+}
 
 @media (max-width: 1050px) {
   .hero,
@@ -327,6 +412,10 @@ figcaption {
     overflow-x: auto;
     padding-bottom: 2px;
   }
+  nav a,
+  nav button {
+    flex: 0 0 auto;
+  }
   h1 { font-size: clamp(2.55rem, 15vw, 4.6rem); }
   .hero {
     min-height: auto;
@@ -342,4 +431,5 @@ figcaption {
     min-height: 340px;
   }
   .contact-links { justify-content: flex-start; }
+  .share-actions { grid-template-columns: 1fr; }
 }
