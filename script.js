@@ -40,7 +40,7 @@ nativeShare?.addEventListener("click", async () => {
     await navigator.clipboard?.writeText(cardUrl);
     nativeShare.textContent = "Link copied";
     window.setTimeout(() => {
-      nativeShare.textContent = "Share";
+      nativeShare.textContent = "Send link";
     }, 1400);
   }
 });
