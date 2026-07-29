@@ -200,6 +200,7 @@ main {
 }
 .work-card.wide .media-box { height: 350px; }
 .media-box img { width: 100%; height: 100%; object-fit: cover; }
+.media-box.product img { object-fit: contain; padding: 18px; }
 .media-box.paper img { object-position: center; }
 .media-box.black { background: #050505; }
 .media-box.black img { object-fit: contain; padding: 18px; }
@@ -254,7 +255,7 @@ main {
 .proof-item video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .proof-item figcaption {
   position: absolute;
