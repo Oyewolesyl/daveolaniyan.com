@@ -27,10 +27,7 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="name" href="#top">
-        <img src="./assets/brand/dave-logo.jpg" alt="" />
-        <span>Dave Olaniyan</span>
-      </a>
+      <a class="name" href="#top">Dave Olaniyan</a>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#industries">Industries</a>
@@ -77,11 +74,16 @@
             <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X</a>
           </div>
         </div>
-        <figure class="hero-photo">
-          <img src="./assets/dave/portrait-main.jpeg" alt="Dave Olaniyan" />
-          <img class="hero-stamp" src="./assets/brand/dave-logo.jpg" alt="" />
-          <figcaption>Abuja, Nigeria / product, engineering, design, field work.</figcaption>
-        </figure>
+        <div class="hero-media" aria-label="Dave Olaniyan portraits">
+          <figure class="identity-portrait">
+            <img src="./assets/brand/dave-logo.jpg" alt="Dave Olaniyan portrait" />
+            <figcaption>Dave Olaniyan / design engineer.</figcaption>
+          </figure>
+          <figure class="context-portrait">
+            <img src="./assets/dave/portrait-main.jpeg" alt="Dave Olaniyan standing in front of a city and drone mural" />
+            <figcaption>Abuja, Nigeria / product, engineering, design, field work.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section id="work" class="work-card">
@@ -340,7 +342,6 @@
       <div class="share-card">
         <button class="close-share" type="button" aria-label="Close share panel">Close</button>
         <p class="eyebrow">Share Dave's Card</p>
-        <img class="share-logo" src="./assets/brand/dave-logo.jpg" alt="" />
         <h2 id="share-title">Scan or send the link.</h2>
         <img
           class="qr-code"
