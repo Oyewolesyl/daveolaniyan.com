@@ -1,5 +1,5 @@
 const sharePanel = document.querySelector("#share-panel");
-const shareTrigger = document.querySelector(".share-trigger");
+const shareTriggers = document.querySelectorAll("[data-share-open]");
 const closeShare = document.querySelector(".close-share");
 const copyLink = document.querySelector(".copy-link");
 const nativeShare = document.querySelector(".native-share");
@@ -11,10 +11,12 @@ const shareData = {
   url: cardUrl,
 };
 
-shareTrigger?.addEventListener("click", () => {
-  if (typeof sharePanel?.showModal === "function") {
-    sharePanel.showModal();
-  }
+shareTriggers.forEach((shareTrigger) => {
+  shareTrigger.addEventListener("click", () => {
+    if (typeof sharePanel?.showModal === "function") {
+      sharePanel.showModal();
+    }
+  });
 });
 
 closeShare?.addEventListener("click", () => sharePanel?.close());

@@ -33,9 +33,10 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#industries">Industries</a>
         <a href="#story">Story</a>
         <a href="#contact">Contact</a>
-        <button class="share-trigger" type="button" aria-haspopup="dialog" aria-controls="share-panel">
+        <button class="share-trigger" type="button" data-share-open aria-haspopup="dialog" aria-controls="share-panel">
           <span></span><span></span><span></span>
           Share
         </button>
@@ -50,7 +51,26 @@
           <p class="lead">
             Based in Abuja, Nigeria. I work across software, design, sustainability, commerce, hardware, healthcare, and real estate.
           </p>
+          <dl class="card-lines" aria-label="Business card details">
+            <div>
+              <dt>Role</dt>
+              <dd>Design Engineer</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd><a href="tel:+2348104190898">+234 810 419 0898</a></dd>
+            </div>
+            <div>
+              <dt>Base</dt>
+              <dd>Abuja, Nigeria</dd>
+            </div>
+          </dl>
           <div class="actions">
+            <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="#work">Open work links</a>
             <a href="mailto:daveolaniyan@gmail.com">Email Dave</a>
             <a href="tel:+2348104190898">Call</a>
@@ -59,6 +79,7 @@
         </div>
         <figure class="hero-photo">
           <img src="./assets/dave/portrait-main.jpeg" alt="Dave Olaniyan" />
+          <img class="hero-stamp" src="./assets/brand/dave-logo.jpg" alt="" />
           <figcaption>Abuja, Nigeria / product, engineering, design, field work.</figcaption>
         </figure>
       </section>
@@ -100,6 +121,77 @@
             <span>DealRadarNG</span>
             <small>affiliate commerce / deal discovery</small>
           </a>
+        </div>
+      </section>
+
+      <section id="industries" class="industry-map" aria-label="Industries Dave has worked in">
+        <div class="industry-head">
+          <p class="eyebrow">Industry Record</p>
+          <h2>The work moves across industries, but the method stays the same.</h2>
+          <p>I learn the space, design the system, build the product, and make the work clear enough for people to use.</p>
+        </div>
+        <div class="industry-grid">
+          <article class="industry-card media-card">
+            <img src="./assets/dave/ai-pitch.jpeg" alt="Dave pitching during the AI Entrepreneurial Leadership Program" />
+            <div>
+              <span>Software / AI</span>
+              <p>AI workflows, SaaS products, dashboards, admin tools, automation, PWAs, and production web apps.</p>
+            </div>
+          </article>
+          <article class="industry-card logo-card">
+            <img src="./assets/brand/yescode-design-main.svg" alt="" />
+            <div>
+              <span>Design / Branding</span>
+              <p>Interfaces, product design, brand systems, launch assets, design systems, and creative direction.</p>
+            </div>
+          </article>
+          <article class="industry-card media-card tall">
+            <img src="./assets/dave/single-use-plastics.jpeg" alt="Dave standing around single-use plastic waste" />
+            <div>
+              <span>Sustainability</span>
+              <p>Nature Packs and Looped Innovation: paper packaging from banana and plantain fibre.</p>
+            </div>
+          </article>
+          <article class="industry-card media-card">
+            <img src="./assets/dave/realestate-sample-room.jpeg" alt="Dave in a real estate sample room with helmet" />
+            <div>
+              <span>Real Estate</span>
+              <p>Site inspections, reports, land evaluation, construction progress, research, sales context.</p>
+            </div>
+          </article>
+          <article class="industry-card logo-card dark-card">
+            <img src="./assets/work/dealradar.svg" alt="" />
+            <div>
+              <span>Affiliate Commerce</span>
+              <p>DealRadarNG: commerce systems, affiliate marketing, retail partnerships, product campaigns.</p>
+            </div>
+          </article>
+          <article class="industry-card logo-card">
+            <img src="./assets/work/ypod.png" alt="" />
+            <div>
+              <span>Consumer Hardware</span>
+              <p>ypod: sleep-focused wireless earbuds, brand, product experience, software, and store.</p>
+            </div>
+          </article>
+          <article class="industry-card text-card">
+            <span>Healthcare</span>
+            <p>Nana: helping children describe pain clearly to parents and healthcare professionals.</p>
+          </article>
+          <article class="industry-card text-card">
+            <span>Personal Insight Tech</span>
+            <p>Dream Logic: astronomy, astrology, symbolic systems, AI, reports, and practitioner tools.</p>
+          </article>
+          <article class="industry-card text-card">
+            <span>Developer Tools</span>
+            <p>otherEND: turning software ideas into implementation-ready engineering plans and reviews.</p>
+          </article>
+          <article class="industry-card media-card">
+            <img src="./assets/dave/fes-dialogue.jpeg" alt="Dave speaking during a dialogue with peers" />
+            <div>
+              <span>Leadership / Networks</span>
+              <p>FES, iFair, stakeholder rooms, public dialogue, founder programs, and service work.</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -231,11 +323,18 @@
         </div>
         <div class="contact-links">
           <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
+          <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp</a>
           <a href="tel:+2348104190898">+234 810 419 0898</a>
           <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">@daveayodeji_</a>
         </div>
       </section>
     </main>
+
+    <div class="quick-contact" aria-label="Quick contact">
+      <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp</a>
+      <a href="mailto:daveolaniyan@gmail.com">Email</a>
+      <button type="button" data-share-open>Share</button>
+    </div>
 
     <dialog id="share-panel" class="share-panel" aria-labelledby="share-title">
       <div class="share-card">
