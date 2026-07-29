@@ -1,5 +1,7 @@
 # daveolaniyan.com
 
-Static personal index for Dave Olaniyan.
+Static personal business-card site for Dave Olaniyan.
 
-Asset boundary: the images and videos in this build are copied only from the existing local `yesCode` and `yesCodeDesign` site asset folders.
+Visual direction: concise personal index, not a gallery and not a long landing page.
+
+Media direction: selected photographs and video from the provided `dave.zip` support the story intentionally. yesCode and yesCode Design appear as work links, not as the dominant visual system.

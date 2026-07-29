@@ -11,14 +11,11 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Dave Olaniyan">
-        <span>Dave Olaniyan</span>
-      </a>
+    <header class="topbar">
+      <a class="name" href="#top">Dave Olaniyan</a>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
-        <a href="#proof">Proof</a>
-        <a href="#bio">Bio</a>
+        <a href="#story">Story</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -27,210 +24,167 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Product Builder / Software Engineer / Design Engineer / Founder</p>
-          <h1>Dave builds products, brands, interfaces, and operating systems.</h1>
-          <p>
-            Based in Abuja, Nigeria. Founder of yesCode and yesCode Design, founder of DealRadarNG, and co-founder of Looped Innovation.
+          <h1>Building useful products across software, design, sustainability, commerce, health, and hardware.</h1>
+          <p class="lead">
+            Based in Abuja, Nigeria. Founder of yesCode, yesCode Design, DealRadarNG, and co-founder of Looped Innovation.
           </p>
-          <div class="hero-actions">
-            <a href="#work">Open work index</a>
-            <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
-            <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X / @daveayodeji_</a>
+          <div class="actions">
+            <a href="#work">Open work links</a>
+            <a href="mailto:daveolaniyan@gmail.com">Email Dave</a>
+            <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X</a>
           </div>
         </div>
-        <aside class="studio-stack" aria-label="Studio identities">
+        <figure class="hero-photo">
+          <img src="./assets/dave/portrait-main.jpeg" alt="Dave Olaniyan" />
+          <figcaption>Abuja, Nigeria / product, engineering, design, field work.</figcaption>
+        </figure>
+      </section>
+
+      <section id="work" class="work-card">
+        <div class="work-head">
+          <p class="eyebrow">Primary Links</p>
+          <h2>The work, without the noise.</h2>
+          <p>Fast exits into the products and studios. The page stays short; the work itself does the talking.</p>
+        </div>
+        <div class="link-board">
+          <a href="https://ypod.vercel.app" target="_blank" rel="noreferrer">
+            <img src="./assets/work/ypod.png" alt="" />
+            <span>ypod landing page</span>
+            <small>consumer hardware / brand surface</small>
+          </a>
+          <a href="https://ypod-store.vercel.app/shop" target="_blank" rel="noreferrer">
+            <img src="./assets/work/ypod.png" alt="" />
+            <span>ypod store</span>
+            <small>commerce / product selection</small>
+          </a>
+          <a href="https://www.naturepacks.org" target="_blank" rel="noreferrer">
+            <img src="./assets/work/naturepacks.svg" alt="" />
+            <span>Nature Packs</span>
+            <small>sustainable packaging / Looped Innovation</small>
+          </a>
           <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">
-            <img src="./assets/brand/yescode-main.svg" alt="yesCode" />
+            <img src="./assets/brand/yescode-main.svg" alt="" />
+            <span>yesCode</span>
+            <small>software, AI, automation, SaaS</small>
           </a>
           <a href="https://yescode-design.vercel.app/" target="_blank" rel="noreferrer">
-            <img src="./assets/brand/yescode-design-main.svg" alt="yesCode Design" />
+            <img src="./assets/brand/yescode-design-main.svg" alt="" />
+            <span>yesCode Design</span>
+            <small>product design, branding, interfaces</small>
           </a>
-        </aside>
-      </section>
-
-      <section class="range" aria-label="Operating range">
-        <span>AI products</span>
-        <span>SaaS</span>
-        <span>Automation</span>
-        <span>Design systems</span>
-        <span>Brand identity</span>
-        <span>Commerce</span>
-        <span>Healthcare UX</span>
-        <span>Consumer hardware</span>
-        <span>Sustainable materials</span>
-        <span>Real estate</span>
-      </section>
-
-      <section id="work" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Work Index</p>
-          <h2>Direct exits into the work.</h2>
-          <p>
-            Built like a digital business card. The work is organized for quick verification, not padded into fake case studies.
-          </p>
-        </div>
-
-        <div class="work-grid">
-          <article class="work-card studio-card">
-            <div class="mark dark-mark">
-              <img src="./assets/brand/yescode-main.svg" alt="yesCode" />
-            </div>
-            <div>
-              <p class="tag">Software studio</p>
-              <h3>yesCode</h3>
-              <p>AI, automation, SaaS, dashboards, internal tools, full-stack builds, and production software systems.</p>
-            </div>
-            <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">Visit yesCode</a>
-          </article>
-
-          <article class="work-card studio-card light">
-            <div class="mark">
-              <img src="./assets/brand/yescode-design-dark.svg" alt="yesCode Design" />
-            </div>
-            <div>
-              <p class="tag">Design studio</p>
-              <h3>yesCode Design</h3>
-              <p>Product design, branding, motion direction, visual systems, and design engineering for live products.</p>
-            </div>
-            <a href="https://yescode-design.vercel.app/" target="_blank" rel="noreferrer">Visit design studio</a>
-          </article>
-
-          <article class="work-card media-card wide">
-            <div class="media-box product"><img src="./assets/projects/ypod/yema-dark.png" alt="ypod product identity" /></div>
-            <div>
-              <p class="tag">Consumer electronics</p>
-              <h3>ypod</h3>
-              <p>Sleep-focused wireless earbuds. Product design, hardware storytelling, launch systems, and commerce surfaces.</p>
-            </div>
-            <div class="links">
-              <a href="https://ypod.vercel.app" target="_blank" rel="noreferrer">Landing</a>
-              <a href="https://ypod-store.vercel.app/shop" target="_blank" rel="noreferrer">Store</a>
-              <a href="https://ypod-backend-management.vercel.app/" target="_blank" rel="noreferrer">Backend</a>
-            </div>
-          </article>
-
-          <article class="work-card media-card">
-            <div class="media-box paper"><img src="./assets/projects/naturepacks/paper-01.jpeg" alt="NaturePacks paper proof" /></div>
-            <div>
-              <p class="tag">Sustainability</p>
-              <h3>Nature Packs</h3>
-              <p>Paper packaging from agricultural waste, built through Looped Innovation.</p>
-            </div>
-            <a href="https://www.naturepacks.org" target="_blank" rel="noreferrer">Visit Nature Packs</a>
-          </article>
-
-          <article class="work-card media-card">
-            <div class="media-box black"><img src="./assets/projects/dealradar/card1minimalgraphicblack.png" alt="DealRadarNG campaign card" /></div>
-            <div>
-              <p class="tag">Affiliate commerce</p>
-              <h3>DealRadarNG</h3>
-              <p>Deal discovery, merchant visibility, software offers, digital products, and retail campaign routing.</p>
-            </div>
-            <a href="https://www.dealradarng.com" target="_blank" rel="noreferrer">Visit DealRadarNG</a>
-          </article>
-
-          <article class="work-card text-card">
-            <div>
-              <p class="tag">Healthcare communication</p>
-              <h3>Nana</h3>
-              <p>A communication platform that helps children describe pain more clearly to parents and healthcare professionals.</p>
-            </div>
-            <a href="https://nana-app-frontend.vercel.app" target="_blank" rel="noreferrer">Open Nana</a>
-          </article>
-
-          <article class="work-card text-card">
-            <div>
-              <p class="tag">Developer tools</p>
-              <h3>otherEND</h3>
-              <p>Engineering review for turning software ideas into implementation-ready product and architecture plans.</p>
-            </div>
-            <span class="pending">Private / pending public link</span>
-          </article>
-
-          <article class="work-card text-card">
-            <div>
-              <p class="tag">Personal insight technology</p>
-              <h3>Dream Logic</h3>
-              <p>Research-driven astrology platform combining astronomy, symbolic systems, AI, education, and reports.</p>
-            </div>
-            <span class="pending">Private / pending public link</span>
-          </article>
+          <a href="https://www.dealradarng.com" target="_blank" rel="noreferrer">
+            <img src="./assets/work/dealradar.svg" alt="" />
+            <span>DealRadarNG</span>
+            <small>affiliate commerce / deal discovery</small>
+          </a>
         </div>
       </section>
 
-      <section id="proof" class="section proof">
-        <div class="section-head">
-          <p class="eyebrow">Vetted Proof</p>
-          <h2>Media from yesCode and yesCode Design only.</h2>
-          <p>
-            The selected media below comes from the existing yesCode / yesCode Design site asset libraries already used to present the work.
-          </p>
-        </div>
-        <div class="proof-grid">
-          <figure class="proof-item large">
-            <video src="./assets/proofs/ypod-store-proof.mp4" autoplay muted loop playsinline></video>
-            <figcaption>ypod store proof</figcaption>
+      <section id="story" class="story">
+        <article class="story-block tech">
+          <div class="story-copy">
+            <p class="eyebrow">Software / AI / Product</p>
+            <h2>Technology is the operating layer.</h2>
+            <p>
+              Dave builds AI products, SaaS products, dashboards, internal tools, admin systems, automation platforms,
+              PWAs, landing pages, brand systems, and production web apps.
+            </p>
+            <ul>
+              <li>React, TypeScript, Next.js, Vite</li>
+              <li>Node.js, Express, Supabase, Prisma, PostgreSQL</li>
+              <li>Stripe, Vercel, Render, GitHub</li>
+            </ul>
+          </div>
+          <figure>
+            <img src="./assets/dave/technology-room.jpeg" alt="Dave working with laptop during an AI entrepreneurial leadership program" />
           </figure>
-          <figure class="proof-item">
-            <video src="./assets/proofs/dealradar-proof.mp4" autoplay muted loop playsinline></video>
-            <figcaption>DealRadarNG proof</figcaption>
+        </article>
+
+        <article class="story-block reverse">
+          <div class="story-copy">
+            <p class="eyebrow">Sustainability</p>
+            <h2>Nature Packs came from material work, not a moodboard.</h2>
+            <p>
+              Through Looped Innovation, Dave leads product, technical, and design direction for Nature Packs: sustainable
+              paper packaging produced from banana and plantain fibre.
+            </p>
+          </div>
+          <div class="paired-media">
+            <figure>
+              <img src="./assets/dave/naturepacks-process.jpeg" alt="Dave and Blessing forming paper for Nature Packs" />
+            </figure>
+            <figure>
+              <img src="./assets/dave/naturepacks-founders.jpeg" alt="Dave and Blessing Ekwerre, co-founders of Nature Packs" />
+            </figure>
+          </div>
+        </article>
+
+        <article class="story-block realestate">
+          <div class="story-copy">
+            <p class="eyebrow">Real Estate</p>
+            <h2>Field exposure shaped the product instinct.</h2>
+            <p>
+              Dave has worked around developers, architects, engineers, estate surveyors, project managers, investors,
+              buyers, and marketing teams: site inspections, construction progress tracking, reporting, research,
+              land evaluation, and development lifecycle understanding.
+            </p>
+          </div>
+          <figure>
+            <video src="./assets/dave/realestate-walk.mp4" autoplay muted loop playsinline></video>
           </figure>
-          <figure class="proof-item">
-            <video src="./assets/proofs/naturepacks-landing-proof.mp4" autoplay muted loop playsinline></video>
-            <figcaption>Nature Packs proof</figcaption>
-          </figure>
-          <figure class="proof-item">
-            <video src="./assets/media/yescode-design-intro.mp4" autoplay muted loop playsinline></video>
-            <figcaption>yesCode Design identity motion</figcaption>
-          </figure>
-          <figure class="proof-item">
-            <video src="./assets/media/yescode-ecosystem.mp4" autoplay muted loop playsinline></video>
-            <figcaption>Studio ecosystem motion</figcaption>
-          </figure>
-        </div>
+        </article>
+
+        <article class="story-block reverse">
+          <div class="story-copy">
+            <p class="eyebrow">Leadership / Rooms / Networks</p>
+            <h2>The work has happened in rooms with people, not only inside screens.</h2>
+            <p>
+              The record includes FES, iFair, AI Entrepreneurial Leadership Program, stakeholder sessions, public dialogue,
+              Red Cross duty, product pitching, and founder networks.
+            </p>
+          </div>
+          <div class="paired-media">
+            <figure>
+              <img src="./assets/dave/pitching-event.jpeg" alt="Dave pitching at an event" />
+            </figure>
+            <figure>
+              <img src="./assets/dave/fes-certificate.jpeg" alt="Dave receiving FES certificate" />
+            </figure>
+          </div>
+        </article>
       </section>
 
-      <section id="bio" class="section bio">
+      <section class="bio-card">
         <div>
-          <p class="eyebrow">Bio</p>
+          <p class="eyebrow">Profile</p>
           <h2>Dave Olaniyan</h2>
-        </div>
-        <div class="bio-copy">
           <p>
             Product Builder, Software Engineer, Design Engineer, and Founder with a B.Sc. in Geography and Environmental Studies.
-            Dave works across product management, software engineering, design engineering, UI/UX, branding, AI product development,
-            automation, full-stack development, and creative direction.
+            Dave works by learning industries deeply and building products inside them.
           </p>
-          <p>
-            His pattern is to learn industries deeply, understand the actual work, then build products inside them. That work has
-            touched SaaS, AI, sustainability, real estate, affiliate commerce, consumer hardware, healthcare communication,
-            astrology/personal insight technology, and developer tools.
-          </p>
-          <div class="bio-panels">
-            <article>
-              <h3>Technical</h3>
-              <p>React, TypeScript, Next.js, Vite, Node.js, Express, Supabase, Prisma, PostgreSQL, Stripe, Vercel, Render, GitHub.</p>
-            </article>
-            <article>
-              <h3>Design</h3>
-              <p>Figma, product design, branding, motion direction, design systems, UI engineering, and launch-ready visual systems.</p>
-            </article>
-            <article>
-              <h3>Communities</h3>
-              <p>AI Entrepreneurial Leadership Program, Friedrich Ebert Stiftung Alumni Network, iFair, and SOSV founder outreach.</p>
-            </article>
-          </div>
+        </div>
+        <div class="bio-list">
+          <p>Product management</p>
+          <p>Software engineering</p>
+          <p>Design engineering</p>
+          <p>UI/UX design</p>
+          <p>Branding</p>
+          <p>AI product development</p>
+          <p>Automation</p>
+          <p>Full-stack development</p>
+          <p>Creative direction</p>
         </div>
       </section>
 
       <section id="contact" class="contact">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Short version: Dave builds the product and the system around it.</h2>
+          <h2>Short version: Dave builds the product, the interface, the system, and the story around it.</h2>
         </div>
         <div class="contact-links">
           <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
           <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a>
-          <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X</a>
+          <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">@daveayodeji_</a>
         </div>
       </section>
     </main>
