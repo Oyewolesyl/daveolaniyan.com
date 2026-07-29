@@ -106,7 +106,7 @@ h1,
 .bio-card h2,
 .contact h2 {
   margin-top: 14px;
-  font-size: clamp(3rem, 6.3vw, 6.2rem);
+  font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.96;
   font-weight: 790;
   letter-spacing: 0;
@@ -192,6 +192,7 @@ figcaption {
 }
 
 .work-card,
+.industry-switcher,
 .industry-map,
 .proof-strip,
 .bio-card,
@@ -275,12 +276,49 @@ figcaption {
   border-color: rgba(255, 255, 255, 0.22);
 }
 
-.industry-section {
+.industry-switcher {
   display: grid;
+  grid-template-columns: 0.34fr 1fr;
+  gap: 20px;
+  align-items: end;
+  padding: clamp(18px, 4vw, 34px);
+  margin-top: 12px;
+}
+.industry-switcher h2 {
+  margin-top: 8px;
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  line-height: 0.98;
+}
+.industry-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.industry-tabs button {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--paper);
+  font-size: 0.82rem;
+  font-weight: 820;
+}
+nav .is-active,
+.industry-tabs .is-active {
+  border-color: var(--dark);
+  background: var(--dark);
+  color: white;
+}
+.industry-section {
+  display: none;
   grid-template-columns: 0.38fr 1fr;
   gap: 12px;
   align-items: stretch;
   margin-top: 12px;
+}
+.industry-section.is-active {
+  display: grid;
 }
 .reverse-section {
   grid-template-columns: 1fr 0.38fr;
@@ -696,14 +734,14 @@ figcaption {
 }
 .quick-contact {
   position: fixed;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  bottom: max(10px, env(safe-area-inset-bottom));
   z-index: 40;
   display: none;
   grid-template-columns: 1fr 1fr;
   gap: 6px;
-  padding: 6px;
+  padding: 5px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
   background: rgba(16, 16, 14, 0.92);
@@ -712,7 +750,7 @@ figcaption {
 .quick-contact a,
 .quick-contact button {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 38px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -726,6 +764,7 @@ figcaption {
 @media (max-width: 1050px) {
   .hero,
   .work-card,
+  .industry-switcher,
   .industry-map,
   .industry-section,
   .reverse-section,
@@ -764,34 +803,85 @@ figcaption {
 }
 
 @media (max-width: 680px) {
-  body { padding-bottom: 64px; }
+  body { padding-bottom: 58px; }
   main { width: min(100% - 20px, 1380px); }
   .topbar {
     align-items: flex-start;
     flex-direction: column;
-    padding: 12px 14px;
+    min-height: auto;
+    padding: 10px;
   }
+  .name { font-size: 0.9rem; }
   nav {
     width: 100%;
     overflow-x: auto;
+    gap: 2px;
     padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
   }
   nav a,
   nav button {
     flex: 0 0 auto;
+    min-height: 32px;
+    padding: 0 9px;
+    font-size: 0.75rem;
   }
-  h1 { font-size: clamp(2.55rem, 15vw, 4.6rem); }
+  .industry-switcher {
+    gap: 14px;
+  }
+  .industry-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .industry-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .industry-tabs button {
+    flex: 0 0 auto;
+    min-height: 34px;
+    font-size: 0.78rem;
+  }
+  h1 { font-size: clamp(2rem, 10vw, 3rem); }
+  .lead { font-size: 0.92rem; }
   .hero {
     min-height: auto;
-    padding-top: 34px;
+    padding-top: 10px;
+    gap: 8px;
   }
-  .hero-copy { padding: 18px; }
+  .hero-copy { padding: 16px; }
+  .card-lines {
+    margin-top: 14px;
+  }
+  .card-lines div {
+    min-height: 52px;
+    padding: 9px;
+  }
+  .card-lines dt {
+    font-size: 0.64rem;
+  }
+  .card-lines dd {
+    font-size: 0.82rem;
+  }
+  .actions {
+    margin-top: 14px;
+    gap: 6px;
+  }
+  .actions a {
+    min-height: 32px;
+    padding: 0 9px;
+    font-size: 0.74rem;
+  }
   .hero-media { grid-template-columns: 1fr; }
   .identity-portrait img {
-    min-height: 390px;
+    min-height: 330px;
   }
   .context-portrait img {
-    min-height: 300px;
+    min-height: 260px;
   }
   .link-board,
   .industry-grid,

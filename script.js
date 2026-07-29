@@ -3,6 +3,8 @@ const shareTriggers = document.querySelectorAll("[data-share-open]");
 const closeShare = document.querySelector(".close-share");
 const copyLink = document.querySelector(".copy-link");
 const nativeShare = document.querySelector(".native-share");
+const industryLinks = document.querySelectorAll("[data-industry-link]");
+const industryPanels = document.querySelectorAll("[data-industry-panel]");
 
 const cardUrl = "https://daveolaniyan.com";
 const shareData = {
@@ -44,3 +46,30 @@ nativeShare?.addEventListener("click", async () => {
     }, 1400);
   }
 });
+
+function showIndustry(id, shouldScroll = true) {
+  industryPanels.forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.industryPanel === id);
+  });
+  industryLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.dataset.industryLink === id);
+  });
+  if (shouldScroll) {
+    document.querySelector("#industries")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+industryLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const id = link.dataset.industryLink;
+    if (!id) return;
+    event.preventDefault();
+    showIndustry(id);
+    history.replaceState(null, "", `#${id}`);
+  });
+});
+
+const initialIndustry = window.location.hash.replace("#", "");
+if (document.querySelector(`[data-industry-panel="${initialIndustry}"]`)) {
+  showIndustry(initialIndustry, false);
+}

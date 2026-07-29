@@ -30,11 +30,7 @@
       <a class="name" href="#top">Dave Olaniyan</a>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
-        <a href="#tech">Tech</a>
-        <a href="#design">Design</a>
-        <a href="#sustainability">Nature</a>
-        <a href="#realestate">Real Estate</a>
-        <a href="#commerce">Commerce</a>
+        <a href="#industries">Industries</a>
         <a href="#contact">Contact</a>
         <button class="share-trigger" type="button" data-share-open aria-haspopup="dialog" aria-controls="share-panel">
           QR
@@ -46,9 +42,9 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Design Engineer / Product Builder / Founder</p>
-          <h1>Dave Olaniyan builds products, interfaces, systems, and brands.</h1>
+          <h1>Dave Olaniyan. Design engineer.</h1>
           <p class="lead">
-            Based in Abuja, Nigeria. I work across software, design, sustainability, commerce, hardware, healthcare, and real estate.
+            I build products, interfaces, systems, and brands across software, design, sustainability, commerce, hardware, and real estate.
           </p>
           <dl class="card-lines" aria-label="Business card details">
             <div>
@@ -72,8 +68,6 @@
             <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="#work">Open work links</a>
             <a href="mailto:daveolaniyan@gmail.com">Email Dave</a>
-            <a href="tel:+2348104190898">Call</a>
-            <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X</a>
           </div>
         </div>
         <div class="hero-media" aria-label="Dave Olaniyan portraits">
@@ -134,7 +128,22 @@
         </div>
       </section>
 
-      <section id="tech" class="industry-section">
+      <section id="industries" class="industry-switcher" aria-label="Industry navigation">
+        <div>
+          <p class="eyebrow">Industries</p>
+          <h2>Choose the room.</h2>
+        </div>
+        <div class="industry-tabs" role="tablist" aria-label="Industry profiles">
+          <button class="is-active" type="button" data-industry-link="tech">Tech</button>
+          <button type="button" data-industry-link="design">Design</button>
+          <button type="button" data-industry-link="sustainability">Nature</button>
+          <button type="button" data-industry-link="realestate">Real Estate</button>
+          <button type="button" data-industry-link="commerce">Commerce</button>
+          <button type="button" data-industry-link="networks">Networks</button>
+        </div>
+      </section>
+
+      <section id="tech" class="industry-section is-active" data-industry-panel="tech">
         <div class="section-copy">
           <p class="eyebrow">Software / AI / Product</p>
           <h2>I build useful software, not just screens.</h2>
@@ -147,7 +156,7 @@
         </div>
       </section>
 
-      <section id="design" class="industry-section reverse-section">
+      <section id="design" class="industry-section reverse-section" data-industry-panel="design">
         <div class="section-copy">
           <p class="eyebrow">Design / Branding</p>
           <h2>Interfaces, identities, and product systems.</h2>
@@ -159,7 +168,7 @@
         </div>
       </section>
 
-      <section id="sustainability" class="industry-section">
+      <section id="sustainability" class="industry-section" data-industry-panel="sustainability">
         <div class="section-copy">
           <p class="eyebrow">Sustainability</p>
           <h2>Nature Packs is material work.</h2>
@@ -173,7 +182,7 @@
         </div>
       </section>
 
-      <section id="realestate" class="industry-section reverse-section">
+      <section id="realestate" class="industry-section reverse-section" data-industry-panel="realestate">
         <div class="section-copy">
           <p class="eyebrow">Real Estate</p>
           <h2>Field work shaped how I think about products.</h2>
@@ -186,7 +195,7 @@
         </div>
       </section>
 
-      <section id="commerce" class="industry-section">
+      <section id="commerce" class="industry-section" data-industry-panel="commerce">
         <div class="section-copy">
           <p class="eyebrow">Commerce / Hardware</p>
           <h2>Products people can open, compare, and buy.</h2>
@@ -199,7 +208,7 @@
         </div>
       </section>
 
-      <section id="networks" class="industry-section reverse-section">
+      <section id="networks" class="industry-section reverse-section" data-industry-panel="networks">
         <div class="section-copy">
           <p class="eyebrow">Networks / Service</p>
           <h2>The work also happened in rooms with people.</h2>
