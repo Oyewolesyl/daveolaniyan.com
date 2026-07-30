@@ -55,7 +55,7 @@ function showIndustry(id, shouldScroll = true) {
     link.classList.toggle("is-active", link.dataset.industryLink === id);
   });
   if (shouldScroll) {
-    document.querySelector("#industries")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector("#experience")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
