@@ -173,6 +173,35 @@ figcaption {
   font-weight: 720;
 }
 
+.profile-context {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.36fr) 1fr;
+  gap: 12px;
+  align-items: stretch;
+  padding: clamp(18px, 3vw, 28px);
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+.profile-context > div:first-child {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.profile-context h2 {
+  margin-top: 12px;
+  font-size: clamp(1.9rem, 3.8vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+.profile-context p:not(.eyebrow) {
+  max-width: 420px;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
 .work-card,
 .industry-switcher,
 .bio-card,
@@ -231,6 +260,43 @@ figcaption {
   object-fit: contain;
   object-position: left center;
   margin-bottom: 14px;
+}
+.link-board img.product-visual {
+  width: 100%;
+  height: 118px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center;
+}
+.link-board a.brand-tile {
+  min-height: 210px;
+  padding: 18px;
+}
+.brand-mark {
+  display: grid;
+  min-height: 112px;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+.brand-tile.dark-tile .brand-mark {
+  background: #050505;
+}
+.brand-tile:not(.dark-tile) .brand-mark {
+  border: 1px solid var(--line);
+  background: #fbfbf8;
+}
+.link-board .brand-mark img {
+  width: min(82%, 280px);
+  height: 82px;
+  margin: 0;
+  object-position: center;
+}
+.design-tile .brand-mark img {
+  width: min(88%, 310px);
+}
+.dealradar-tile .brand-mark img {
+  width: min(74%, 220px);
 }
 .link-board span {
   font-size: clamp(1.2rem, 2.2vw, 2.1rem);
@@ -370,6 +436,21 @@ nav .is-active,
   grid-column: 1 / -1;
   margin-top: 0;
 }
+.profile-context .portrait-strip {
+  margin-bottom: 0;
+}
+.record-row {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+.record-row .eyebrow {
+  padding-left: 2px;
+}
 .wide-strip {
   grid-auto-columns: minmax(200px, 22vw);
 }
@@ -437,6 +518,13 @@ nav .is-active,
   height: 110px;
   object-fit: contain;
   object-position: left center;
+}
+.commerce-links a:not(.dark-commerce) img {
+  width: 100%;
+  height: 220px;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center;
 }
 .commerce-links span {
   font-size: clamp(1.45rem, 3vw, 2.8rem);
@@ -658,6 +746,7 @@ nav .is-active,
 }
 @media (max-width: 1050px) {
   .hero,
+  .profile-context,
   .work-card,
   .industry-switcher,
   .industry-section,
@@ -668,6 +757,9 @@ nav .is-active,
   }
   .reverse-section .section-copy { order: 0; }
   .hero-copy { min-height: auto; }
+  .profile-context > div:first-child {
+    min-height: auto;
+  }
   .hero-media {
     grid-template-columns: 1fr 1fr;
     min-height: auto;
@@ -713,6 +805,13 @@ nav .is-active,
   }
   .industry-switcher {
     gap: 14px;
+  }
+  .profile-context {
+    gap: 10px;
+    padding: 14px;
+  }
+  .profile-context h2 {
+    font-size: clamp(1.85rem, 9vw, 3rem);
   }
   .industry-tabs {
     justify-content: flex-start;
@@ -772,6 +871,9 @@ nav .is-active,
   .media-strip {
     grid-auto-columns: minmax(76vw, 1fr);
   }
+  .record-row {
+    padding: 10px;
+  }
   .link-board,
   .media-pair,
   .media-grid-three,
@@ -789,6 +891,21 @@ nav .is-active,
   .link-board img,
   .commerce-links img {
     height: 54px;
+  }
+  .link-board img.product-visual {
+    height: 116px;
+  }
+  .link-board a.brand-tile {
+    min-height: 184px;
+  }
+  .brand-mark {
+    min-height: 92px;
+  }
+  .link-board .brand-mark img {
+    height: 68px;
+  }
+  .commerce-links a:not(.dark-commerce) img {
+    height: 190px;
   }
   .contact-links { justify-content: flex-start; }
   .share-actions { grid-template-columns: 1fr; }
