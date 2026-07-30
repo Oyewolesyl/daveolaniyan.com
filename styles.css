@@ -135,6 +135,32 @@ h1,
   gap: 8px;
   margin-top: 26px;
 }
+.hero-work {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+}
+.hero-work a {
+  display: grid;
+  min-height: 68px;
+  align-content: space-between;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.72);
+}
+.hero-work img {
+  width: 100%;
+  height: 28px;
+  object-fit: contain;
+  object-position: left center;
+}
+.hero-work span {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 820;
+}
 .identity-line {
   max-width: 680px;
   margin-top: 18px;
@@ -910,6 +936,22 @@ nav .is-active,
     padding: 0 9px;
     font-size: 0.74rem;
   }
+  .hero-work {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .hero-work a {
+    min-height: 52px;
+    padding: 7px;
+  }
+  .hero-work img {
+    height: 20px;
+  }
+  .hero-work span {
+    font-size: 0.58rem;
+    line-height: 1;
+  }
   .hero-media { grid-template-columns: 1fr; }
   .identity-portrait { display: block; }
   .hero-media figcaption {
@@ -936,6 +978,72 @@ nav .is-active,
   .media-grid-four,
   .commerce-links,
   .bio-list { grid-template-columns: 1fr; }
+  .work-card {
+    gap: 14px;
+    padding: 16px;
+  }
+  .work-head h2 {
+    margin-top: 8px;
+    font-size: clamp(1.75rem, 9vw, 2.55rem);
+  }
+  .work-head p:not(.eyebrow) {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  .link-board {
+    gap: 6px;
+  }
+  .link-board a {
+    grid-template-columns: 74px 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    min-height: 82px;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+  }
+  .link-board img,
+  .link-board img.product-visual,
+  .link-board .brand-mark {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    width: 74px;
+    height: 54px;
+    margin: 0;
+    border-radius: 5px;
+  }
+  .link-board img.product-visual {
+    height: 54px;
+  }
+  .link-board a.brand-tile {
+    min-height: 82px;
+    padding: 10px;
+  }
+  .brand-mark {
+    min-height: 54px;
+  }
+  .link-board .brand-mark img {
+    width: 64px;
+    height: 34px;
+  }
+  .link-board span {
+    grid-column: 2;
+    font-size: 1rem;
+    line-height: 1.05;
+  }
+  .link-board small {
+    grid-column: 2;
+    font-size: 0.66rem;
+    line-height: 1.15;
+  }
+  .link-board b {
+    grid-row: 1 / 3;
+    grid-column: 3;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 0.64rem;
+    white-space: nowrap;
+  }
   .section-copy,
   .media-pair figure,
   .media-grid-three figure,
@@ -944,21 +1052,8 @@ nav .is-active,
   .logo-wall {
     min-height: 280px;
   }
-  .link-board img,
   .commerce-links img {
     height: 54px;
-  }
-  .link-board img.product-visual {
-    height: 116px;
-  }
-  .link-board a.brand-tile {
-    min-height: 184px;
-  }
-  .brand-mark {
-    min-height: 92px;
-  }
-  .link-board .brand-mark img {
-    height: 68px;
   }
   .commerce-links a:not(.dark-commerce) img {
     height: 190px;
