@@ -37,8 +37,16 @@ section { scroll-margin-top: 88px; }
   background: rgba(246, 246, 243, 0.9);
   backdrop-filter: blur(18px);
 }
-.name { font-size: 0.95rem; font-weight: 780; }
-nav { display: flex; gap: 4px; }
+.name {
+  font-size: 0.95rem;
+  font-weight: 820;
+  letter-spacing: 0;
+}
+nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
 nav a,
 nav button,
 .actions a,
@@ -59,19 +67,23 @@ nav button,
 }
 nav a,
 nav button {
+  min-height: auto;
+  padding: 0;
   border-color: transparent;
   background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 820;
+}
+nav a:hover,
+nav button:hover {
+  color: var(--ink);
 }
 button {
   color: inherit;
   font: inherit;
   cursor: pointer;
 }
-.share-trigger {
-  border-color: var(--line);
-  background: var(--paper);
-}
-
 main {
   width: min(1380px, calc(100% - 32px));
   margin: 0 auto 28px;
@@ -152,7 +164,8 @@ h1,
   width: 100%;
   height: 100%;
   min-height: 520px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--dark);
 }
 .identity-portrait img {
   object-position: center;
@@ -265,8 +278,9 @@ figcaption {
   width: 100%;
   height: 118px;
   border-radius: 6px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: #0c0c0a;
 }
 .link-board a.brand-tile {
   min-height: 210px;
@@ -469,7 +483,8 @@ nav .is-active,
 .media-strip video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--dark);
 }
 .media-pair figure,
 .media-grid-three figure,
@@ -487,7 +502,8 @@ nav .is-active,
 .media-grid-three video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--dark);
 }
 .logo-wall {
   display: grid;
@@ -523,8 +539,9 @@ nav .is-active,
   width: 100%;
   height: 220px;
   border-radius: 6px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: #0c0c0a;
 }
 .commerce-links span {
   font-size: clamp(1.45rem, 3vw, 2.8rem);
@@ -570,17 +587,15 @@ nav .is-active,
 .industry-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--dark);
 }
 .industry-card div,
 .text-card {
   padding: 16px;
 }
 .media-card div {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  position: static;
   border-radius: 6px;
   color: white;
   background: rgba(0, 0, 0, 0.72);
@@ -744,6 +759,38 @@ nav .is-active,
   font-size: 0.9rem;
   font-weight: 720;
 }
+
+.quickbar {
+  position: fixed;
+  right: max(10px, env(safe-area-inset-right));
+  bottom: max(10px, env(safe-area-inset-bottom));
+  left: max(10px, env(safe-area-inset-left));
+  z-index: 45;
+  display: none;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(16, 16, 14, 0.94);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+.quickbar a,
+.quickbar button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 820;
+  white-space: nowrap;
+}
 @media (max-width: 1050px) {
   .hero,
   .profile-context,
@@ -777,31 +824,33 @@ nav .is-active,
 }
 
 @media (max-width: 680px) {
-  body { padding-bottom: 0; }
+  body { padding-bottom: 74px; }
   main { width: min(100% - 20px, 1380px); }
   .topbar {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
     min-height: auto;
-    padding: 10px;
+    padding: 10px 12px;
   }
-  .name { font-size: 0.9rem; }
+  .name {
+    flex: 0 0 auto;
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
   nav {
-    width: 100%;
-    overflow-x: auto;
+    width: auto;
+    justify-content: flex-end;
+    margin-left: auto;
+    overflow: visible;
     gap: 2px;
-    padding-bottom: 2px;
-    scrollbar-width: none;
-  }
-  nav::-webkit-scrollbar {
-    display: none;
+    padding: 0;
   }
   nav a,
   nav button {
     flex: 0 0 auto;
     min-height: 32px;
-    padding: 0 9px;
-    font-size: 0.75rem;
+    padding: 0 8px;
+    font-size: 0.72rem;
   }
   .industry-switcher {
     gap: 14px;
@@ -814,40 +863,39 @@ nav .is-active,
     font-size: clamp(1.85rem, 9vw, 3rem);
   }
   .industry-tabs {
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scrollbar-width: none;
-  }
-  .industry-tabs::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    overflow: visible;
+    flex-wrap: initial;
   }
   .industry-tabs button {
-    flex: 0 0 auto;
+    width: 100%;
     min-height: 34px;
-    font-size: 0.78rem;
+    padding: 6px 8px;
+    font-size: 0.74rem;
+    line-height: 1.12;
+    white-space: normal;
   }
   h1 { font-size: clamp(2rem, 10vw, 3rem); }
   .lead { font-size: 0.92rem; }
   .hero { min-height: auto; padding-top: 10px; gap: 8px; }
   .hero-copy {
-    min-height: min(680px, calc(100svh - 86px));
+    min-height: auto;
     justify-content: flex-end;
     padding: 16px;
-    color: white;
-    background:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.84)),
-      url("./assets/brand/dave-logo.jpg") center / cover;
+    color: var(--ink);
+    background: var(--paper);
   }
   .hero-copy .eyebrow,
   .hero-copy .lead,
   .identity-line {
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--muted);
   }
   .identity-line {
     margin-top: 12px;
     padding-top: 12px;
-    border-color: rgba(255, 255, 255, 0.24);
+    border-color: var(--line);
     font-size: 0.84rem;
   }
   .actions {
@@ -855,15 +903,23 @@ nav .is-active,
     gap: 6px;
   }
   .actions a {
-    border-color: rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.12);
-    color: white;
+    border-color: var(--line);
+    background: rgba(255, 255, 255, 0.52);
+    color: var(--ink);
     min-height: 32px;
     padding: 0 9px;
     font-size: 0.74rem;
   }
   .hero-media { grid-template-columns: 1fr; }
-  .identity-portrait { display: none; }
+  .identity-portrait { display: block; }
+  .hero-media figcaption {
+    position: static;
+    border-radius: 0;
+    background: var(--dark);
+  }
+  .identity-portrait img {
+    min-height: 280px;
+  }
   .context-portrait img {
     min-height: 300px;
   }
@@ -909,4 +965,5 @@ nav .is-active,
   }
   .contact-links { justify-content: flex-start; }
   .share-actions { grid-template-columns: 1fr; }
+  .quickbar { display: grid; }
 }
