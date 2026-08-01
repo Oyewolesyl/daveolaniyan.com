@@ -5,6 +5,8 @@ const copyLink = document.querySelector(".copy-link");
 const nativeShare = document.querySelector(".native-share");
 const industryLinks = document.querySelectorAll("[data-industry-link]");
 const industryPanels = document.querySelectorAll("[data-industry-panel]");
+const themeToggle = document.querySelector(".theme-toggle");
+const themeColor = document.querySelector('meta[name="theme-color"]');
 
 const cardUrl = "https://daveolaniyan.com";
 const shareData = {
@@ -12,6 +14,32 @@ const shareData = {
   text: "Dave Olaniyan - design engineer, product builder, and founder.",
   url: cardUrl,
 };
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  themeToggle?.setAttribute("aria-pressed", String(isDark));
+  if (themeToggle) themeToggle.textContent = isDark ? "Light" : "Dark";
+  themeColor?.setAttribute("content", isDark ? "#0f0f0d" : "#10100e");
+  try {
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  } catch {
+    // Storage can be blocked in private or embedded browsers; theme still applies.
+  }
+}
+
+let savedTheme = null;
+try {
+  savedTheme = localStorage.getItem("theme");
+} catch {
+  savedTheme = null;
+}
+setTheme(savedTheme || "light");
+
+themeToggle?.addEventListener("click", () => {
+  const current = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  setTheme(current === "dark" ? "light" : "dark");
+});
 
 shareTriggers.forEach((shareTrigger) => {
   shareTrigger.addEventListener("click", () => {
@@ -73,3 +101,10 @@ const initialIndustry = window.location.hash.replace("#", "");
 if (document.querySelector(`[data-industry-panel="${initialIndustry}"]`)) {
   showIndustry(initialIndustry, false);
 }
+
+function updateHeaderState() {
+  document.body.classList.toggle("is-scrolled", window.scrollY > 80);
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
