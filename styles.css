@@ -1105,6 +1105,9 @@ nav .is-active,
   .hero-copy .actions {
     width: min(100%, 286px);
   }
+  .hero-copy .lead {
+    width: min(100%, 250px);
+  }
   .identity-line {
     margin-top: 12px;
     padding-top: 12px;
