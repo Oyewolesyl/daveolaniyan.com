@@ -130,6 +130,7 @@ nav button {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 820;
+  text-transform: lowercase;
 }
 nav a:hover,
 nav button:hover {
@@ -169,14 +170,14 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(360px, 0.92fr);
   gap: clamp(18px, 3vw, 34px);
-  align-items: stretch;
-  min-height: calc(100svh - 88px);
+  align-items: start;
+  min-height: auto;
   padding: clamp(18px, 3vw, 34px) 0 12px;
 }
 .hero-copy {
   display: flex;
   min-width: 0;
-  min-height: 100%;
+  min-height: auto;
   flex-direction: column;
   justify-content: center;
   padding: clamp(20px, 4vw, 44px);
@@ -188,8 +189,8 @@ main {
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 840;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-transform: none;
 }
 h1,
 .work-head h2,
@@ -231,6 +232,101 @@ h1,
   min-height: 100%;
   align-items: start;
 }
+.model-welcome {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.72fr) 1fr;
+  gap: 10px;
+  align-items: end;
+  overflow: hidden;
+  min-height: 420px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.48)),
+    var(--paper);
+}
+[data-theme="dark"] .model-welcome {
+  background:
+    linear-gradient(180deg, rgba(23, 23, 21, 0.86), rgba(23, 23, 21, 0.58)),
+    var(--paper);
+}
+.model-stage {
+  position: relative;
+  display: grid;
+  min-height: 360px;
+  aspect-ratio: 1 / 1;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #050505;
+}
+.bust-model,
+.model-gif {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+}
+.bust-model {
+  position: relative;
+  z-index: 1;
+}
+.model-gif {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  object-fit: contain;
+  padding: 18px;
+  background: #050505;
+  transition: opacity 260ms ease, visibility 260ms ease;
+}
+.model-ready .model-gif {
+  opacity: 0;
+  visibility: hidden;
+}
+.welcome-lines {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 8px;
+  align-self: end;
+}
+.welcome-lines p {
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #11100e;
+  font-size: 0.86rem;
+  font-weight: 760;
+  line-height: 1.28;
+  text-transform: lowercase;
+}
+[data-theme="dark"] .welcome-lines p {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(5, 5, 5, 0.72);
+  color: #f4f3ee;
+}
+.welcome-lines p:first-child {
+  font-size: 1.12rem;
+  font-weight: 840;
+}
+.nft-stamp {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 7px;
+  object-fit: cover;
+  background: #050505;
+}
 .identity-portrait,
 .context-portrait {
   position: relative;
@@ -265,6 +361,14 @@ figcaption {
 }
 .context-portrait {
   overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
+  justify-self: center;
+}
+.context-portrait img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(62vh, 620px);
 }
 .context-portrait figcaption {
   position: absolute;
@@ -639,7 +743,7 @@ nav .is-active,
 .portrait-strip figure,
 .media-strip figure {
   position: relative;
-  display: block;
+  display: inline-flex;
   align-self: start;
   height: fit-content;
   min-height: 0;
@@ -664,7 +768,7 @@ nav .is-active,
 .media-grid-three figure,
 .media-grid-four figure {
   position: relative;
-  display: block;
+  display: inline-flex;
   align-self: start;
   height: fit-content;
   min-height: 0;
@@ -1218,6 +1322,41 @@ nav .is-active,
     font-size: 0.68rem;
   }
   .hero-media { grid-template-columns: 1fr; }
+  .model-welcome {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 10px;
+    gap: 8px;
+  }
+  .model-stage {
+    width: min(100%, 280px);
+    min-height: 250px;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+  }
+  .bust-model,
+  .model-gif {
+    min-height: 250px;
+  }
+  .model-gif {
+    padding: 14px;
+  }
+  .welcome-lines {
+    align-self: start;
+  }
+  .welcome-lines p {
+    width: 100%;
+    font-size: 0.78rem;
+  }
+  .welcome-lines p:first-child {
+    font-size: 0.98rem;
+  }
+  .nft-stamp {
+    width: 44px;
+    height: 44px;
+    top: 10px;
+    right: 10px;
+  }
   .hero-media figcaption {
     font-size: 0.68rem;
   }

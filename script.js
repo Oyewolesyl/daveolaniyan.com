@@ -7,11 +7,13 @@ const industryLinks = document.querySelectorAll("[data-industry-link]");
 const industryPanels = document.querySelectorAll("[data-industry-panel]");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const modelWelcome = document.querySelector(".model-welcome");
+const bustModel = document.querySelector(".bust-model");
 
-const cardUrl = "https://daveolaniyan.com";
+const cardUrl = "https://daveolaniyan-com.vercel.app";
 const shareData = {
   title: "Dave Olaniyan",
-  text: "Dave Olaniyan - design engineer, product builder, and founder.",
+  text: "dave olaniyan - design engineer, product builder, and founder.",
   url: cardUrl,
 };
 
@@ -19,7 +21,7 @@ function setTheme(theme) {
   const isDark = theme === "dark";
   document.documentElement.dataset.theme = isDark ? "dark" : "light";
   themeToggle?.setAttribute("aria-pressed", String(isDark));
-  if (themeToggle) themeToggle.textContent = isDark ? "Light" : "Dark";
+  if (themeToggle) themeToggle.textContent = isDark ? "light" : "dark";
   themeColor?.setAttribute("content", isDark ? "#0f0f0d" : "#10100e");
   try {
     localStorage.setItem("theme", isDark ? "dark" : "light");
@@ -57,9 +59,9 @@ sharePanel?.addEventListener("click", (event) => {
 
 copyLink?.addEventListener("click", async () => {
   await navigator.clipboard?.writeText(cardUrl);
-  copyLink.textContent = "Copied";
+  copyLink.textContent = "copied";
   window.setTimeout(() => {
-    copyLink.textContent = "Copy link";
+    copyLink.textContent = "copy link";
   }, 1400);
 });
 
@@ -68,9 +70,9 @@ nativeShare?.addEventListener("click", async () => {
     await navigator.share(shareData);
   } else {
     await navigator.clipboard?.writeText(cardUrl);
-    nativeShare.textContent = "Link copied";
+    nativeShare.textContent = "link copied";
     window.setTimeout(() => {
-      nativeShare.textContent = "Send link";
+      nativeShare.textContent = "send link";
     }, 1400);
   }
 });
@@ -108,3 +110,7 @@ function updateHeaderState() {
 
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+bustModel?.addEventListener("load", () => {
+  modelWelcome?.classList.add("model-ready");
+});

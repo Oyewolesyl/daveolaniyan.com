@@ -11,19 +11,20 @@
     <meta property="og:title" content="Dave Olaniyan" />
     <meta property="og:description" content="Design engineer, product builder, software engineer, and founder based in Abuja, Nigeria." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://daveolaniyan.com" />
-    <meta property="og:image" content="https://daveolaniyan.com/assets/brand/dave-logo.jpg" />
+    <meta property="og:url" content="https://daveolaniyan-com.vercel.app" />
+    <meta property="og:image" content="https://daveolaniyan-com.vercel.app/assets/brand/dave-logo.jpg" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Dave Olaniyan" />
     <meta name="twitter:description" content="Design engineer, product builder, software engineer, and founder based in Abuja, Nigeria." />
-    <meta name="twitter:image" content="https://daveolaniyan.com/assets/brand/dave-logo.jpg" />
+    <meta name="twitter:image" content="https://daveolaniyan-com.vercel.app/assets/brand/dave-logo.jpg" />
     <title>Dave Olaniyan</title>
-    <link rel="canonical" href="https://daveolaniyan.com" />
+    <link rel="canonical" href="https://daveolaniyan-com.vercel.app" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/icon-32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="./assets/icons/icon-48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/icon-180.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </head>
   <body>
     <header class="topbar">
@@ -32,53 +33,77 @@
         <span>Dave Ayodeji</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#experience">Experience</a>
-        <a href="#work">Projects</a>
-        <button class="theme-toggle" type="button" aria-label="Switch dark mode" aria-pressed="false">Dark</button>
+        <a href="#experience">experience</a>
+        <a href="#work">projects</a>
+        <button class="theme-toggle" type="button" aria-label="switch dark mode" aria-pressed="false">dark</button>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Design Engineer / Product Builder / Founder</p>
-          <h1>Dave Olaniyan.<br />Design engineer.</h1>
+          <p class="eyebrow">design engineer. product builder. founder.</p>
+          <h1>dave olaniyan.<br />design engineer.</h1>
           <p class="lead">
-            I build software, interfaces, brands, commerce, and sustainable packaging systems.
+            i build software, interfaces, brands, commerce, and sustainable packaging systems.
           </p>
           <p class="identity-line">Abuja, Nigeria<br />daveolaniyan@gmail.com<br />+234 810 419 0898</p>
           <div class="actions">
             <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="#work">Open work links</a>
-            <a href="mailto:daveolaniyan@gmail.com">Email Dave</a>
+            <a href="#work">open work links</a>
+            <a href="mailto:daveolaniyan@gmail.com">email Dave</a>
           </div>
         </div>
         <div class="hero-media" aria-label="Dave Olaniyan portraits">
+          <section class="model-welcome" aria-label="interactive Dave welcome">
+            <div class="model-stage">
+              <model-viewer
+                class="bust-model"
+                src="./assets/experience/dave-bust.glb"
+                poster="./assets/experience/dave-bust-welcome.gif"
+                alt="interactive 3D bust of Dave Olaniyan"
+                camera-controls
+                auto-rotate
+                rotation-per-second="16deg"
+                interaction-prompt="none"
+                shadow-intensity="0.65"
+                exposure="0.95"
+                loading="lazy"
+              ></model-viewer>
+              <img class="model-gif" src="./assets/experience/dave-bust-welcome.gif" alt="" />
+            </div>
+            <div class="welcome-lines">
+              <p>hey, i am dave.</p>
+              <p>a design engineer.</p>
+              <p>a design engineer connects product thinking, interface design, and software engineering so ideas can become usable systems.</p>
+            </div>
+            <img class="nft-stamp" src="./assets/experience/dave-nft-portrait.png" alt="" />
+          </section>
           <figure class="context-portrait">
             <img src="./assets/dave/portrait-main.jpeg" alt="Dave Olaniyan standing in front of a city and drone mural" />
-            <figcaption>Abuja, Nigeria / product, engineering, design, field work.</figcaption>
+            <figcaption>Abuja, Nigeria. product, engineering, design, field work.</figcaption>
           </figure>
         </div>
       </section>
 
       <section id="work" class="work-card">
         <div class="work-head">
-          <p class="eyebrow">Primary Links</p>
-          <h2>Open the work.</h2>
-          <p>The main public links: product pages, stores, studios, and ventures. Each opens straight to the work.</p>
+          <p class="eyebrow">primary links</p>
+          <h2>open the work.</h2>
+          <p>the main public links: product pages, stores, studios, and ventures. each opens straight to the work.</p>
         </div>
         <div class="link-board">
           <a href="https://ypod.vercel.app" target="_blank" rel="noreferrer">
             <img class="product-visual ypod-visual" src="./assets/work/ypod-landing-real.png" alt="" />
             <span>ypod landing page</span>
-            <small>consumer hardware / brand surface</small>
-            <b>Visit site</b>
+            <small>consumer hardware, brand surface</small>
+            <b>visit site</b>
           </a>
           <a href="https://ypod-store.vercel.app/shop" target="_blank" rel="noreferrer">
             <img class="product-visual ypod-visual" src="./assets/work/ypod-store-real.png" alt="" />
             <span>ypod store</span>
-            <small>commerce / product selection</small>
-            <b>Visit store</b>
+            <small>commerce, product selection</small>
+            <b>visit store</b>
           </a>
           <a class="brand-tile theme-logo-tile naturepacks-tile" href="https://www.naturepacks.org" target="_blank" rel="noreferrer">
             <div class="brand-mark">
@@ -86,8 +111,8 @@
               <img class="logo-dark" src="./assets/work/naturepacks-white-black.svg" alt="" />
             </div>
             <span>Nature Packs</span>
-            <small>sustainable packaging / Looped Innovation</small>
-            <b>Visit site</b>
+            <small>sustainable packaging, Looped Innovation</small>
+            <b>visit site</b>
           </a>
           <a class="brand-tile theme-logo-tile" href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">
             <div class="brand-mark">
@@ -95,8 +120,8 @@
               <img class="logo-dark" src="./assets/brand/yescode-main.svg" alt="" />
             </div>
             <span>yesCode</span>
-            <small>software studio / product builds</small>
-            <b>Visit studio</b>
+            <small>software studio, product builds</small>
+            <b>visit studio</b>
           </a>
           <a class="brand-tile theme-logo-tile design-tile" href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">
             <div class="brand-mark">
@@ -105,7 +130,7 @@
             </div>
             <span>yesCode Design</span>
             <small>product design, branding, interfaces</small>
-            <b>Visit studio</b>
+            <b>visit studio</b>
           </a>
           <a class="brand-tile theme-logo-tile dealradar-tile" href="https://www.dealradarng.com" target="_blank" rel="noreferrer">
             <div class="brand-mark">
@@ -113,43 +138,43 @@
               <img class="logo-dark" src="./assets/work/dealradar-light.svg" alt="" />
             </div>
             <span>DealRadarNG</span>
-            <small>affiliate commerce / deal discovery</small>
-            <b>Visit site</b>
+            <small>affiliate commerce, deal discovery</small>
+            <b>visit site</b>
           </a>
         </div>
       </section>
 
       <section id="experience" class="industry-switcher" aria-label="Experience navigation">
         <div>
-          <p class="eyebrow">Experience</p>
-          <h2>Move by experience.</h2>
-          <p>Software, product, design, AI, sustainable materials, real estate development, and digital commerce.</p>
+          <p class="eyebrow">experience</p>
+          <h2>move by experience.</h2>
+          <p>software, product, design, AI, sustainable materials, real estate development, and digital commerce.</p>
         </div>
         <div class="industry-tabs" role="tablist" aria-label="Practice domains">
-          <button class="is-active" type="button" data-industry-link="tech">Software</button>
-          <button type="button" data-industry-link="product">Product</button>
-          <button type="button" data-industry-link="design">Design</button>
+          <button class="is-active" type="button" data-industry-link="tech">software</button>
+          <button type="button" data-industry-link="product">product</button>
+          <button type="button" data-industry-link="design">design</button>
           <button type="button" data-industry-link="ai">AI</button>
-          <button type="button" data-industry-link="sustainability">Sustainability</button>
-          <button type="button" data-industry-link="realestate">Real Estate</button>
-          <button type="button" data-industry-link="commerce">Commerce</button>
-          <button type="button" data-industry-link="networks">Professional</button>
+          <button type="button" data-industry-link="sustainability">sustainability</button>
+          <button type="button" data-industry-link="realestate">real estate</button>
+          <button type="button" data-industry-link="commerce">commerce</button>
+          <button type="button" data-industry-link="networks">professional</button>
         </div>
       </section>
 
       <section id="tech" class="industry-section is-active" data-industry-panel="tech">
         <div class="section-copy">
-          <p class="eyebrow">Software / Product</p>
-          <h2>I turn product ideas into working web products.</h2>
-          <p>Through yesCode I build product websites, dashboards, admin tools, automation workflows, AI-assisted interfaces, PWAs, and production web apps.</p>
-          <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">Open yesCode</a>
+          <p class="eyebrow">software, product</p>
+          <h2>i turn product ideas into working web products.</h2>
+          <p>through yesCode i build product websites, dashboards, admin tools, automation workflows, AI-assisted interfaces, PWAs, and production web apps.</p>
+          <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">open yesCode</a>
         </div>
         <div class="media-pair">
           <figure><img src="./assets/dave/technology-room.jpeg" alt="Dave working with laptop during an AI entrepreneurial leadership program" /></figure>
           <figure><img src="./assets/dave/ai-pitch.jpeg" alt="Dave pitching during the AI Entrepreneurial Leadership Program" /></figure>
         </div>
         <div class="record-row">
-          <p class="eyebrow">Technology Record</p>
+          <p class="eyebrow">technology record</p>
           <div class="media-strip" aria-label="Technology work media">
             <figure><img src="./assets/zip-media/tech/dave-sitting-with-laptop-focused.jpeg" alt="Dave focused on a laptop during a technology program" /></figure>
             <figure><img src="./assets/zip-media/tech/davesittingintrainignfocused.jpeg" alt="Dave focused during training" /></figure>
@@ -163,10 +188,10 @@
 
       <section id="product" class="industry-section" data-industry-panel="product">
         <div class="section-copy">
-          <p class="eyebrow">Product Management</p>
-          <h2>Research, architecture, planning, validation, launch.</h2>
-          <p>Product strategy, discovery, user research, feature planning, MVP planning, technical documentation, engineering collaboration, validation, and launch planning.</p>
-          <a href="#work">Open project links</a>
+          <p class="eyebrow">product management</p>
+          <h2>research, architecture, planning, validation, launch.</h2>
+          <p>product strategy, discovery, user research, feature planning, MVP planning, technical documentation, engineering collaboration, validation, and launch planning.</p>
+          <a href="#work">open project links</a>
         </div>
         <div class="media-pair">
           <figure><img src="./assets/dave/ai-pitch.jpeg" alt="Dave presenting product work during an AI program" /></figure>
@@ -176,10 +201,10 @@
 
       <section id="ai" class="industry-section reverse-section" data-industry-panel="ai">
         <div class="section-copy">
-          <p class="eyebrow">Artificial Intelligence</p>
+          <p class="eyebrow">artificial intelligence</p>
           <h2>AI-enabled products and engineering workflows.</h2>
-          <p>AI product design, prompt engineering, automation, LLM integrations, engineering review systems, AI-assisted workflows, and MCP implementations. Part of the AI Entrepreneurial Leadership Program by Innov8 Hub in partnership with UniStream.</p>
-          <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">Open yesCode</a>
+          <p>AI product design, prompt engineering, automation, LLM integrations, engineering review systems, AI-assisted workflows, and MCP implementations. part of the AI Entrepreneurial Leadership Program by Innov8 Hub in partnership with UniStream.</p>
+          <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">open yesCode</a>
         </div>
         <div class="media-pair">
           <figure><img src="./assets/zip-media/public-record/ai-entrepreneurial-leadership.jpeg" alt="AI Entrepreneurial Leadership Program session" /></figure>
@@ -189,10 +214,10 @@
 
       <section id="design" class="industry-section reverse-section" data-industry-panel="design">
         <div class="section-copy">
-          <p class="eyebrow">Design / Branding</p>
-          <h2>Interfaces, identities, and product systems.</h2>
-          <p>Through yesCode Design I work on UI/UX, brand identity, launch assets, design systems, and clean product surfaces.</p>
-          <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">Open yesCode Design</a>
+          <p class="eyebrow">design, branding</p>
+          <h2>interfaces, identities, and product systems.</h2>
+          <p>through yesCode Design i work on UI/UX, brand identity, launch assets, design systems, and clean product surfaces.</p>
+          <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">open yesCode Design</a>
         </div>
         <div class="logo-wall">
           <img class="logo-light" src="./assets/brand/yescode-design-dark.svg" alt="yesCode Design logo" />
@@ -202,10 +227,10 @@
 
       <section id="sustainability" class="industry-section" data-industry-panel="sustainability">
         <div class="section-copy">
-          <p class="eyebrow">Sustainability</p>
+          <p class="eyebrow">sustainability</p>
           <h2>Nature Packs is material work.</h2>
-          <p>Through Looped Innovation I work on Nature Packs, a sustainable paper packaging venture using banana and plantain fibre.</p>
-          <a href="https://www.naturepacks.org/" target="_blank" rel="noreferrer">Open Nature Packs</a>
+          <p>through Looped Innovation i work on Nature Packs, a sustainable paper packaging venture using banana and plantain fibre.</p>
+          <a href="https://www.naturepacks.org/" target="_blank" rel="noreferrer">open Nature Packs</a>
         </div>
         <div class="media-grid-three">
           <figure><img src="./assets/dave/naturepacks-process.jpeg" alt="Dave and Blessing forming paper for Nature Packs" /></figure>
@@ -213,7 +238,7 @@
           <figure><img src="./assets/dave/single-use-plastics.jpeg" alt="Dave standing around single-use plastic waste" /></figure>
         </div>
         <div class="record-row">
-          <p class="eyebrow">Nature Packs Record</p>
+          <p class="eyebrow">Nature Packs record</p>
           <div class="media-strip" aria-label="Nature Packs media">
             <figure><img src="./assets/zip-media/naturepacks/dave-and-blessing-ekwerre-co-founders-of-naturepacks.jpeg" alt="Dave and Blessing Ekwerre, co-founders of Nature Packs" /></figure>
             <figure><img src="./assets/zip-media/naturepacks/daveandblessingekwere.jpeg" alt="Dave and Blessing Ekwerre working on Nature Packs" /></figure>
@@ -228,9 +253,9 @@
 
       <section id="realestate" class="industry-section reverse-section" data-industry-panel="realestate">
         <div class="section-copy">
-          <p class="eyebrow">Real Estate</p>
-          <h2>Field work shaped how I think about products.</h2>
-          <p>Site inspections, construction progress checks, weekly reporting, property research, land evaluation, and buyer/investor conversations.</p>
+          <p class="eyebrow">real estate</p>
+          <h2>field work shaped how i think about products.</h2>
+          <p>site inspections, construction progress checks, weekly reporting, property research, land evaluation, and buyer and investor conversations.</p>
         </div>
         <div class="media-grid-three">
           <figure><video src="./assets/dave/realestate-walk.mp4" autoplay muted loop playsinline></video></figure>
@@ -238,7 +263,7 @@
           <figure><img src="./assets/dave/realestate-sample-room.jpeg" alt="Dave in a real estate sample room with helmet" /></figure>
         </div>
         <div class="record-row">
-          <p class="eyebrow">Real Estate Record</p>
+          <p class="eyebrow">real estate record</p>
           <div class="media-strip" aria-label="Real estate media">
             <figure><video src="./assets/zip-media/realestate/whatsapp-video-2026-07-29-at-8-33-34-am.mp4" autoplay muted loop playsinline></video></figure>
             <figure><video src="./assets/zip-media/realestate/walking-then-reaveal.mp4" autoplay muted loop playsinline></video></figure>
@@ -270,8 +295,8 @@
 
       <section id="commerce" class="industry-section" data-industry-panel="commerce">
         <div class="section-copy">
-          <p class="eyebrow">Commerce / Hardware</p>
-          <h2>Products people can open, compare, and buy.</h2>
+          <p class="eyebrow">commerce, hardware</p>
+          <h2>products people can open, compare, and buy.</h2>
           <p>ypod covers the consumer hardware brand and store. DealRadarNG covers affiliate commerce, retail campaigns, and deal discovery.</p>
         </div>
         <div class="commerce-links">
@@ -283,14 +308,14 @@
 
       <section id="networks" class="industry-section reverse-section" data-industry-panel="networks">
         <div class="section-copy">
-          <p class="eyebrow">Professional Record</p>
-          <h2>Programs, service, presentations, and professional rooms I have been part of.</h2>
+          <p class="eyebrow">professional record</p>
+          <h2>programs, service, presentations, and professional rooms i have been part of.</h2>
           <p>AI Entrepreneurial Leadership Program, UniStream, FES, iFair, stakeholder sessions, civic dialogue, Red Cross duty, NYSC service, and professional networks connected to the work.</p>
         </div>
         <div class="media-grid-four">
           <figure>
             <img src="./assets/dave/stakeholder-roundtable.jpeg" alt="Dave presenting in a professional stakeholder session" />
-            <figcaption>Stakeholder presentation.</figcaption>
+            <figcaption>stakeholder presentation.</figcaption>
           </figure>
           <figure>
             <img src="./assets/dave/ifair-award.jpeg" alt="Dave receiving public recognition at iFair" />
@@ -302,11 +327,11 @@
           </figure>
           <figure>
             <img src="./assets/dave/fes-dialogue.jpeg" alt="Dave contributing during a public dialogue with peers" />
-            <figcaption>Public dialogue.</figcaption>
+            <figcaption>public dialogue.</figcaption>
           </figure>
           <figure>
             <img src="./assets/dave/pitching-event.jpeg" alt="Dave presenting work in a professional public setting" />
-            <figcaption>Professional presentation.</figcaption>
+            <figcaption>professional presentation.</figcaption>
           </figure>
           <figure>
             <img src="./assets/dave/fes-certificate.jpeg" alt="Dave receiving a Friedrich Ebert Stiftung certificate" />
@@ -322,7 +347,7 @@
           </figure>
         </div>
         <div class="record-row">
-          <p class="eyebrow">Professional Record</p>
+          <p class="eyebrow">professional record</p>
           <div class="media-strip wide-strip" aria-label="Public and professional record media">
             <figure><img src="./assets/zip-media/stakeholders/pitchingatevent.jpeg" alt="Dave presenting work in a professional room" /></figure>
           <figure><img src="./assets/zip-media/stakeholders/roundtablepreparatory2.jpeg" alt="Dave at a stakeholder roundtable" /></figure>
@@ -359,9 +384,9 @@
 
       <section id="media" class="profile-context" aria-label="Dave Olaniyan working contexts">
         <div>
-          <p class="eyebrow">Working Context</p>
-          <h2>Product rooms, field rooms, founder rooms.</h2>
-          <p>The work moves across product rooms, design reviews, material experiments, site inspections, commerce builds, and professional programs.</p>
+          <p class="eyebrow">working context</p>
+          <h2>product rooms, field rooms, founder rooms.</h2>
+          <p>the work moves across product rooms, design reviews, material experiments, site inspections, commerce builds, and professional programs.</p>
         </div>
         <div class="portrait-strip">
           <figure><img src="./assets/zip-media/main/whatsapp-image-2026-07-29-at-8-15-28-am.jpeg" alt="Dave Olaniyan portrait" /></figure>
@@ -373,30 +398,30 @@
 
       <section class="bio-card">
         <div>
-          <p class="eyebrow">Profile</p>
+          <p class="eyebrow">profile</p>
           <h2>Dave Olaniyan</h2>
           <p>
-            Design Engineer, Product Builder, Software Engineer, and Founder with a B.Sc. in Geography and Environmental Studies.
-            I study the field, map the system, then build the product, interface, brand, or page that makes it usable.
+            design engineer, product builder, software engineer, and founder with a B.Sc. in Geography and Environmental Studies.
+            i study the field, map the system, then build the product, interface, brand, or page that makes it usable.
           </p>
         </div>
         <div class="bio-list">
-          <p>Product management</p>
-          <p>Software engineering</p>
-          <p>Design engineering</p>
+          <p>product management</p>
+          <p>software engineering</p>
+          <p>design engineering</p>
           <p>UI/UX design</p>
-          <p>Branding</p>
+          <p>branding</p>
           <p>AI-assisted products</p>
-          <p>Automation</p>
-          <p>Full-stack development</p>
-          <p>Creative direction</p>
+          <p>automation</p>
+          <p>full-stack development</p>
+          <p>creative direction</p>
         </div>
       </section>
 
       <section id="contact" class="contact">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Product, software, design, commerce, sustainability, and field-informed work.</h2>
+          <p class="eyebrow">contact</p>
+          <h2>product, software, design, commerce, sustainability, and field-informed work.</h2>
         </div>
         <div class="contact-links">
           <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
@@ -410,29 +435,29 @@
 
     <nav class="quickbar" aria-label="Quick actions">
       <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp</a>
-      <a href="mailto:daveolaniyan@gmail.com">Email</a>
-      <button type="button" data-share-open aria-haspopup="dialog" aria-controls="share-panel">Share</button>
+      <a href="mailto:daveolaniyan@gmail.com">email</a>
+      <button type="button" data-share-open aria-haspopup="dialog" aria-controls="share-panel">share</button>
     </nav>
 
     <dialog id="share-panel" class="share-panel" aria-labelledby="share-title">
       <div class="share-card">
-        <button class="close-share" type="button" aria-label="Close share panel">Close</button>
+        <button class="close-share" type="button" aria-label="close share panel">close</button>
         <p class="eyebrow">Dave's QR</p>
-        <h2 id="share-title">Scan the card.</h2>
+        <h2 id="share-title">scan the card.</h2>
         <img
           class="qr-code"
           src="./assets/work/daveolaniyan-qr.png"
-          alt="QR code for daveolaniyan.com"
+          alt="QR code for Dave Ayodeji's card"
         />
         <div class="share-actions">
-          <button class="copy-link" type="button">Copy link</button>
-          <button class="native-share" type="button">Send link</button>
+          <button class="copy-link" type="button">copy link</button>
+          <button class="native-share" type="button">send link</button>
         </div>
         <div class="share-contact">
           <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
           <a href="tel:+2348104190898">+234 810 419 0898</a>
-          <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X / @daveayodeji_</a>
-          <a href="https://www.instagram.com/daveayodeji_/" target="_blank" rel="noreferrer">Instagram / @daveayodeji_</a>
+          <a href="https://x.com/daveayodeji_" target="_blank" rel="noreferrer">X, @daveayodeji_</a>
+          <a href="https://www.instagram.com/daveayodeji_/" target="_blank" rel="noreferrer">Instagram, @daveayodeji_</a>
         </div>
       </div>
     </dialog>
