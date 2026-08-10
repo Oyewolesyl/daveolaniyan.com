@@ -120,10 +120,12 @@ function finishIntro() {
 }
 
 bustModel?.addEventListener("load", () => {
-  window.setTimeout(finishIntro, 900);
+  window.setTimeout(finishIntro, 650);
 });
 
-window.setTimeout(finishIntro, 5200);
+bustModel?.addEventListener("error", () => {
+  window.setTimeout(finishIntro, 12000);
+});
 
 let speechIndex = 0;
 function updateSpeechLine() {
