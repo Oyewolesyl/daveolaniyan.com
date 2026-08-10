@@ -9,7 +9,6 @@ const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const modelWelcome = document.querySelector(".model-welcome");
 const bustModel = document.querySelector(".bust-model");
-const speechLines = [...document.querySelectorAll("[data-speech-line]")];
 const siteIntro = document.querySelector(".site-intro");
 const introLines = [...document.querySelectorAll(".intro-line")];
 const introNext = document.querySelector(".intro-next");
@@ -18,7 +17,7 @@ const introSkip = document.querySelector(".intro-skip");
 const cardUrl = "https://daveolaniyan-com.vercel.app";
 const shareData = {
   title: "Dave Olaniyan",
-  text: "dave olaniyan - design engineer, product builder, and founder.",
+  text: "dave Olaniyan - design engineer, product builder, and founder.",
   url: cardUrl,
 };
 
@@ -192,16 +191,3 @@ bustModel?.addEventListener("error", () => {
   modelLoaded = true;
   window.setTimeout(finishIntro, 12000);
 });
-
-let speechIndex = 0;
-function updateSpeechLine() {
-  speechLines.forEach((line, index) => {
-    line.classList.toggle("is-speaking", index === speechIndex);
-  });
-  speechIndex = (speechIndex + 1) % Math.max(speechLines.length, 1);
-}
-
-if (speechLines.length) {
-  updateSpeechLine();
-  window.setInterval(updateSpeechLine, 2200);
-}

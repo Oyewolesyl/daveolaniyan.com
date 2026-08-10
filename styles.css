@@ -1,33 +1,33 @@
 :root {
-  --bg: #f6f6f3;
-  --paper: #ffffff;
+  --bg: #efeee8;
+  --paper: #fffefa;
   --ink: #11100e;
-  --muted: #5f5f59;
-  --line: rgba(17, 16, 14, 0.14);
+  --muted: #4d4d47;
+  --line: rgba(17, 16, 14, 0.2);
   --dark: #10100e;
   --active-bg: #10100e;
   --active-ink: #ffffff;
   --button: rgba(255, 255, 255, 0.52);
-  --soft: #f8f8f5;
-  --nav-bg: rgba(246, 246, 243, 0.9);
-  --shadow: rgba(17, 16, 14, 0.08);
+  --soft: #f7f6ef;
+  --nav-bg: rgba(239, 238, 232, 0.92);
+  --shadow: rgba(17, 16, 14, 0.14);
   --warm: #d8d8d1;
   --green: #465744;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg: #0f0f0d;
-  --paper: #171715;
+  --bg: #0b0b0a;
+  --paper: #151512;
   --ink: #f4f3ee;
-  --muted: #b8b6ae;
-  --line: rgba(244, 243, 238, 0.16);
+  --muted: #cac7bd;
+  --line: rgba(244, 243, 238, 0.22);
   --dark: #080807;
   --active-bg: #f4f3ee;
   --active-ink: #10100e;
   --button: rgba(255, 255, 255, 0.06);
-  --soft: #20201d;
-  --nav-bg: rgba(15, 15, 13, 0.88);
+  --soft: #1f1f1b;
+  --nav-bg: rgba(11, 11, 10, 0.9);
   --shadow: rgba(0, 0, 0, 0.34);
 }
 
@@ -339,17 +339,16 @@ h1,
   align-items: stretch;
   overflow: hidden;
   min-height: 430px;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.62)),
-    #f7f7f4;
+  background: #050505;
+  box-shadow: 0 18px 60px rgba(17, 16, 14, 0.14);
 }
 [data-theme="dark"] .model-welcome {
-  background:
-    linear-gradient(180deg, rgba(23, 23, 21, 0.72), rgba(23, 23, 21, 0.42)),
-    #050505;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #050505;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.42);
 }
 .model-stage {
   position: relative;
@@ -358,7 +357,7 @@ h1,
   aspect-ratio: 16 / 10;
   place-items: center;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 7px;
   background: #050505;
 }
@@ -370,76 +369,6 @@ h1,
 .bust-model {
   position: relative;
   z-index: 1;
-}
-.welcome-lines {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-  left: auto;
-  z-index: 4;
-  display: grid;
-  width: min(46%, 330px);
-  gap: 7px;
-  align-self: auto;
-  pointer-events: none;
-}
-.welcome-lines p {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #11100e;
-  font-size: 0.86rem;
-  font-weight: 760;
-  line-height: 1.28;
-  text-transform: lowercase;
-  opacity: 0.58;
-  transform: translateY(0);
-  transition: opacity 220ms ease, transform 220ms ease, background 220ms ease;
-}
-.welcome-lines p::before {
-  position: absolute;
-  top: 16px;
-  left: -7px;
-  width: 12px;
-  height: 12px;
-  border-bottom: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-  background: inherit;
-  content: "";
-  transform: rotate(45deg);
-}
-.welcome-lines p.is-speaking {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-[data-theme="dark"] .welcome-lines p {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(5, 5, 5, 0.72);
-  color: #f4f3ee;
-}
-.welcome-lines p:not(.is-speaking) {
-  opacity: 0.36;
-}
-.welcome-lines p:first-child {
-  font-size: 1.12rem;
-  font-weight: 840;
-}
-.nft-stamp {
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  z-index: 4;
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 7px;
-  object-fit: cover;
-  background: #050505;
-  opacity: 0.74;
 }
 .identity-portrait,
 .context-portrait {
@@ -1465,10 +1394,10 @@ nav .is-active,
   }
   .hero-media { grid-template-columns: 1fr; }
   .model-welcome {
-    grid-template-columns: minmax(0, 0.68fr) minmax(86px, 0.32fr);
+    grid-template-columns: 1fr;
     min-height: auto;
     padding: 10px;
-    gap: 8px;
+    gap: 0;
     align-items: center;
   }
   .model-stage {
@@ -1479,37 +1408,6 @@ nav .is-active,
   }
   .bust-model {
     min-height: 220px;
-  }
-  .welcome-lines {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    align-self: start;
-    gap: 6px;
-  }
-  .welcome-lines p {
-    width: fit-content;
-    max-width: 100%;
-    padding: 7px 8px;
-    font-size: 0.62rem;
-    line-height: 1.22;
-  }
-  .welcome-lines p:first-child {
-    font-size: 0.74rem;
-  }
-  .welcome-lines p::before {
-    display: block;
-    top: 11px;
-    left: -5px;
-    width: 9px;
-    height: 9px;
-  }
-  .nft-stamp {
-    width: 34px;
-    height: 34px;
-    top: 10px;
-    right: 10px;
   }
   .hero-media figcaption {
     font-size: 0.68rem;
