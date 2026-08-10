@@ -121,7 +121,6 @@ let introComplete = false;
 function finishIntro(force = false) {
   if (!force && (!modelLoaded || !introComplete)) return;
   if (introTimer) window.clearInterval(introTimer);
-  modelWelcome?.classList.add("model-ready");
   siteIntro?.classList.add("is-done");
   document.body.classList.remove("intro-active");
 }
@@ -184,10 +183,13 @@ if (siteIntro) {
 
 bustModel?.addEventListener("load", () => {
   modelLoaded = true;
+  modelWelcome?.classList.add("model-loaded");
+  bustModel.setAttribute("camera-orbit", "0deg 76deg 112%");
   window.setTimeout(finishIntro, 650);
 });
 
 bustModel?.addEventListener("error", () => {
   modelLoaded = true;
+  modelWelcome?.classList.add("model-loaded");
   window.setTimeout(finishIntro, 12000);
 });
