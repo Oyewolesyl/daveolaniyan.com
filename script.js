@@ -9,6 +9,8 @@ const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const modelWelcome = document.querySelector(".model-welcome");
 const bustModel = document.querySelector(".bust-model");
+const speechLines = [...document.querySelectorAll("[data-speech-line]")];
+const siteIntro = document.querySelector(".site-intro");
 
 const cardUrl = "https://daveolaniyan-com.vercel.app";
 const shareData = {
@@ -111,6 +113,27 @@ function updateHeaderState() {
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-bustModel?.addEventListener("load", () => {
+function finishIntro() {
   modelWelcome?.classList.add("model-ready");
+  siteIntro?.classList.add("is-done");
+  document.body.classList.remove("intro-active");
+}
+
+bustModel?.addEventListener("load", () => {
+  window.setTimeout(finishIntro, 900);
 });
+
+window.setTimeout(finishIntro, 5200);
+
+let speechIndex = 0;
+function updateSpeechLine() {
+  speechLines.forEach((line, index) => {
+    line.classList.toggle("is-speaking", index === speechIndex);
+  });
+  speechIndex = (speechIndex + 1) % Math.max(speechLines.length, 1);
+}
+
+if (speechLines.length) {
+  updateSpeechLine();
+  window.setInterval(updateSpeechLine, 2200);
+}

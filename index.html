@@ -26,7 +26,17 @@
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </head>
-  <body>
+  <body class="intro-active">
+    <section class="site-intro" aria-label="Dave welcome">
+      <div class="intro-bust">
+        <img src="./assets/experience/dave-bust-welcome.gif" alt="3D bust of Dave welcoming visitors" />
+      </div>
+      <div class="intro-lines">
+        <p>hey, i am dave.</p>
+        <p>a design engineer.</p>
+        <p>a design engineer connects product thinking, interface design, and software engineering so ideas can become usable systems.</p>
+      </div>
+    </section>
     <header class="topbar">
       <a class="name" href="#top">
         <img src="./assets/brand/dave-logo.jpg" alt="" />
@@ -63,8 +73,10 @@
                 poster="./assets/experience/dave-bust-welcome.gif"
                 alt="interactive 3D bust of Dave Olaniyan"
                 camera-controls
-                auto-rotate
-                rotation-per-second="16deg"
+                camera-orbit="0deg 76deg 105%"
+                min-camera-orbit="-25deg 68deg 90%"
+                max-camera-orbit="25deg 84deg 125%"
+                disable-zoom
                 interaction-prompt="none"
                 shadow-intensity="0.65"
                 exposure="0.95"
@@ -73,9 +85,9 @@
               <img class="model-gif" src="./assets/experience/dave-bust-welcome.gif" alt="" />
             </div>
             <div class="welcome-lines">
-              <p>hey, i am dave.</p>
-              <p>a design engineer.</p>
-              <p>a design engineer connects product thinking, interface design, and software engineering so ideas can become usable systems.</p>
+              <p data-speech-line>hey, i am dave.</p>
+              <p data-speech-line>a design engineer.</p>
+              <p data-speech-line>a design engineer connects product thinking, interface design, and software engineering so ideas can become usable systems.</p>
             </div>
             <img class="nft-stamp" src="./assets/experience/dave-nft-portrait.png" alt="" />
           </section>

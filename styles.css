@@ -45,6 +45,9 @@ body {
   line-height: 1.45;
   overflow-x: hidden;
 }
+body.intro-active {
+  overflow: hidden;
+}
 a { color: inherit; text-decoration: none; }
 img, video { display: block; max-width: 100%; }
 main,
@@ -60,6 +63,65 @@ nav {
 }
 p, h1, h2, figure { margin: 0; }
 section { scroll-margin-top: 88px; }
+
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 48px);
+  background: #050505;
+  color: white;
+  transition: opacity 420ms ease, visibility 420ms ease;
+}
+.site-intro.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.intro-bust {
+  display: grid;
+  width: min(360px, 70vw);
+  aspect-ratio: 1 / 1;
+  place-items: center;
+}
+.intro-bust img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.intro-lines {
+  position: absolute;
+  right: max(22px, 8vw);
+  bottom: max(28px, 9vh);
+  display: grid;
+  width: min(390px, calc(100vw - 44px));
+  gap: 8px;
+}
+.intro-lines p {
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #0b0b0a;
+  font-size: 0.88rem;
+  font-weight: 820;
+  line-height: 1.25;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: introLine 420ms ease forwards;
+}
+.intro-lines p:nth-child(2) { animation-delay: 480ms; }
+.intro-lines p:nth-child(3) { animation-delay: 960ms; }
+@keyframes introLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .topbar {
   position: sticky;
@@ -186,11 +248,12 @@ main {
   background: var(--paper);
 }
 .eyebrow {
-  color: var(--muted);
+  color: var(--ink);
   font-size: 0.72rem;
   font-weight: 840;
   letter-spacing: 0.06em;
   text-transform: none;
+  opacity: 0.72;
 }
 h1,
 .work-head h2,
@@ -235,28 +298,28 @@ h1,
 .model-welcome {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(180px, 0.72fr) 1fr;
-  gap: 10px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: stretch;
   overflow: hidden;
-  min-height: 420px;
+  min-height: 430px;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.48)),
-    var(--paper);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.62)),
+    #f7f7f4;
 }
 [data-theme="dark"] .model-welcome {
   background:
-    linear-gradient(180deg, rgba(23, 23, 21, 0.86), rgba(23, 23, 21, 0.58)),
-    var(--paper);
+    linear-gradient(180deg, rgba(23, 23, 21, 0.72), rgba(23, 23, 21, 0.42)),
+    #050505;
 }
 .model-stage {
   position: relative;
   display: grid;
-  min-height: 360px;
-  aspect-ratio: 1 / 1;
+  min-height: 404px;
+  aspect-ratio: 16 / 10;
   place-items: center;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -267,7 +330,7 @@ h1,
 .model-gif {
   width: 100%;
   height: 100%;
-  min-height: 360px;
+  min-height: 404px;
 }
 .bust-model {
   position: relative;
@@ -278,38 +341,66 @@ h1,
   inset: 0;
   z-index: 2;
   object-fit: contain;
-  padding: 18px;
+  padding: 28px;
   background: #050505;
-  transition: opacity 260ms ease, visibility 260ms ease;
+  transition: opacity 420ms ease, visibility 420ms ease;
 }
 .model-ready .model-gif {
   opacity: 0;
   visibility: hidden;
 }
 .welcome-lines {
-  position: relative;
-  z-index: 3;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: auto;
+  z-index: 4;
   display: grid;
-  gap: 8px;
-  align-self: end;
+  width: min(46%, 330px);
+  gap: 7px;
+  align-self: auto;
+  pointer-events: none;
 }
 .welcome-lines p {
-  width: fit-content;
+  position: relative;
+  width: 100%;
   max-width: 100%;
-  padding: 9px 11px;
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.9);
   color: #11100e;
   font-size: 0.86rem;
   font-weight: 760;
   line-height: 1.28;
   text-transform: lowercase;
+  opacity: 0.58;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease, background 220ms ease;
+}
+.welcome-lines p::before {
+  position: absolute;
+  top: 16px;
+  left: -7px;
+  width: 12px;
+  height: 12px;
+  border-bottom: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: inherit;
+  content: "";
+  transform: rotate(45deg);
+}
+.welcome-lines p.is-speaking {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 [data-theme="dark"] .welcome-lines p {
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(5, 5, 5, 0.72);
   color: #f4f3ee;
+}
+.welcome-lines p:not(.is-speaking) {
+  opacity: 0.36;
 }
 .welcome-lines p:first-child {
   font-size: 1.12rem;
@@ -319,13 +410,14 @@ h1,
   position: absolute;
   right: 12px;
   top: 12px;
-  z-index: 2;
-  width: 54px;
-  height: 54px;
+  z-index: 4;
+  width: 42px;
+  height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 7px;
   object-fit: cover;
   background: #050505;
+  opacity: 0.74;
 }
 .identity-portrait,
 .context-portrait {
@@ -688,7 +780,7 @@ nav .is-active,
 .commerce-links {
   display: grid;
   gap: 8px;
-  align-items: start;
+  align-items: center;
 }
 .media-pair {
   grid-template-columns: 1fr 1fr;
@@ -702,7 +794,7 @@ nav .is-active,
 .portrait-strip,
 .media-strip {
   display: grid;
-  align-items: start;
+  align-items: center;
   grid-auto-flow: column;
   grid-auto-columns: minmax(220px, 28vw);
   width: 100%;
@@ -744,7 +836,7 @@ nav .is-active,
 .media-strip figure {
   position: relative;
   display: inline-flex;
-  align-self: start;
+  align-self: center;
   height: fit-content;
   min-height: 0;
   line-height: 0;
@@ -769,7 +861,7 @@ nav .is-active,
 .media-grid-four figure {
   position: relative;
   display: inline-flex;
-  align-self: start;
+  align-self: center;
   height: fit-content;
   min-height: 0;
   line-height: 0;
@@ -1130,6 +1222,20 @@ nav .is-active,
 
 @media (max-width: 680px) {
   body { padding-bottom: 96px; }
+  .intro-lines {
+    position: static;
+    margin-top: 14px;
+  }
+  .intro-lines p {
+    width: 100%;
+    font-size: 0.76rem;
+  }
+  .intro-bust {
+    width: min(280px, 74vw);
+  }
+  .site-intro {
+    align-content: center;
+  }
   main { width: min(100% - 20px, 1380px); }
   main { max-width: calc(100vw - 20px); }
   .topbar {
@@ -1342,11 +1448,16 @@ nav .is-active,
     padding: 14px;
   }
   .welcome-lines {
+    position: static;
+    width: 100%;
     align-self: start;
   }
   .welcome-lines p {
     width: 100%;
     font-size: 0.78rem;
+  }
+  .welcome-lines p::before {
+    display: none;
   }
   .welcome-lines p:first-child {
     font-size: 0.98rem;
