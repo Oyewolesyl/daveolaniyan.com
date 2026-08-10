@@ -33,7 +33,7 @@
         <button class="intro-skip" type="button">skip</button>
       </div>
       <div class="intro-bust">
-        <img src="./assets/experience/dave-nft-portrait.png" alt="3D bust portrait of Dave Olaniyan" />
+        <img src="./assets/experience/dave-bust-welcome-static.gif" alt="3D bust of Dave Olaniyan" />
       </div>
       <div class="intro-lines">
         <p class="intro-line intro-line-one is-visible">i am dave Olaniyan.</p>
@@ -57,7 +57,7 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">design engineer. product builder. founder.</p>
-          <h1>dave olaniyan.<br />design engineer.</h1>
+          <h1>dave Olaniyan.<br />design engineer.</h1>
           <p class="lead">
             i build software, interfaces, brands, commerce, and sustainable packaging systems.
           </p>
@@ -159,15 +159,36 @@
           <h2>move by experience.</h2>
           <p>software, product, design, AI, sustainable materials, real estate development, and digital commerce.</p>
         </div>
-        <div class="industry-tabs" role="tablist" aria-label="Practice domains">
-          <button class="is-active" type="button" data-industry-link="tech">software</button>
-          <button type="button" data-industry-link="product">product</button>
-          <button type="button" data-industry-link="design">design</button>
-          <button type="button" data-industry-link="ai">AI</button>
-          <button type="button" data-industry-link="sustainability">sustainability</button>
-          <button type="button" data-industry-link="realestate">real estate</button>
-          <button type="button" data-industry-link="commerce">commerce</button>
-          <button type="button" data-industry-link="networks">professional</button>
+        <div class="experience-orbit" role="tablist" aria-label="Practice domains">
+          <div class="industry-tabs industry-tabs-left">
+            <button class="is-active" type="button" data-industry-link="tech">software</button>
+            <button type="button" data-industry-link="product">product</button>
+            <button type="button" data-industry-link="design">design</button>
+            <button type="button" data-industry-link="ai">AI</button>
+          </div>
+          <div class="experience-face" aria-label="interactive Dave experience model">
+            <model-viewer
+              class="experience-model"
+              src="./assets/experience/dave-bust.glb"
+              alt="interactive 3D bust of Dave Olaniyan"
+              camera-controls
+              camera-orbit="0deg 76deg 116%"
+              min-camera-orbit="-35deg 68deg 98%"
+              max-camera-orbit="35deg 84deg 132%"
+              disable-zoom
+              interaction-prompt="none"
+              shadow-intensity="0.65"
+              exposure="0.95"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-loading">loading model</p>
+          </div>
+          <div class="industry-tabs industry-tabs-right">
+            <button type="button" data-industry-link="sustainability">sustainability</button>
+            <button type="button" data-industry-link="realestate">real estate</button>
+            <button type="button" data-industry-link="commerce">commerce</button>
+            <button type="button" data-industry-link="networks">professional</button>
+          </div>
         </div>
       </section>
 

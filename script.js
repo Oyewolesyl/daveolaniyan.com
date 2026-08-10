@@ -8,7 +8,10 @@ const industryPanels = document.querySelectorAll("[data-industry-panel]");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const modelWelcome = document.querySelector(".model-welcome");
+const introImage = document.querySelector(".intro-bust img");
 const bustModel = document.querySelector(".bust-model");
+const experienceFace = document.querySelector(".experience-face");
+const experienceModel = document.querySelector(".experience-model");
 const siteIntro = document.querySelector(".site-intro");
 const introLines = [...document.querySelectorAll(".intro-line")];
 const introNext = document.querySelector(".intro-next");
@@ -181,15 +184,33 @@ if (siteIntro) {
   }, 9000);
 }
 
-bustModel?.addEventListener("load", () => {
+if (introImage?.complete) {
   modelLoaded = true;
+} else {
+  introImage?.addEventListener("load", () => {
+    modelLoaded = true;
+    finishIntro();
+  });
+  introImage?.addEventListener("error", () => {
+    modelLoaded = true;
+    finishIntro();
+  });
+}
+
+bustModel?.addEventListener("load", () => {
   modelWelcome?.classList.add("model-loaded");
   bustModel.setAttribute("camera-orbit", "0deg 76deg 112%");
-  window.setTimeout(finishIntro, 650);
 });
 
 bustModel?.addEventListener("error", () => {
-  modelLoaded = true;
   modelWelcome?.classList.add("model-loaded");
-  window.setTimeout(finishIntro, 12000);
+});
+
+experienceModel?.addEventListener("load", () => {
+  experienceFace?.classList.add("experience-loaded");
+  experienceModel.setAttribute("camera-orbit", "0deg 76deg 116%");
+});
+
+experienceModel?.addEventListener("error", () => {
+  experienceFace?.classList.add("experience-loaded");
 });
