@@ -11,6 +11,9 @@ const modelWelcome = document.querySelector(".model-welcome");
 const bustModel = document.querySelector(".bust-model");
 const speechLines = [...document.querySelectorAll("[data-speech-line]")];
 const siteIntro = document.querySelector(".site-intro");
+const introLines = [...document.querySelectorAll(".intro-line")];
+const introNext = document.querySelector(".intro-next");
+const introSkip = document.querySelector(".intro-skip");
 
 const cardUrl = "https://daveolaniyan-com.vercel.app";
 const shareData = {
@@ -113,17 +116,80 @@ function updateHeaderState() {
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-function finishIntro() {
+let modelLoaded = false;
+let introComplete = false;
+
+function finishIntro(force = false) {
+  if (!force && (!modelLoaded || !introComplete)) return;
+  if (introTimer) window.clearInterval(introTimer);
   modelWelcome?.classList.add("model-ready");
   siteIntro?.classList.add("is-done");
   document.body.classList.remove("intro-active");
 }
 
+let introIndex = 0;
+let introTimer = null;
+function showIntroLine(index) {
+  introIndex = Math.min(index, Math.max(introLines.length - 1, 0));
+  introLines.forEach((line, lineIndex) => {
+    line.classList.toggle("is-visible", lineIndex <= introIndex);
+  });
+  if (introNext) introNext.textContent = introIndex >= introLines.length - 1 ? "enter" : "next";
+}
+
+function markIntroComplete(forceExit = false) {
+  introComplete = true;
+  finishIntro(forceExit);
+}
+
+function advanceIntro(forceExitOnFinal = false) {
+  if (!introLines.length) return;
+  if (introIndex >= introLines.length - 1) {
+    markIntroComplete(forceExitOnFinal);
+    return;
+  }
+  showIntroLine(introIndex + 1);
+}
+
+function startIntroFlow() {
+  if (!introLines.length) return;
+  showIntroLine(0);
+  introTimer = window.setInterval(() => {
+    if (introIndex >= introLines.length - 1) {
+      window.clearInterval(introTimer);
+      window.setTimeout(markIntroComplete, 1600);
+      return;
+    }
+    advanceIntro(false);
+  }, 1800);
+}
+
+introNext?.addEventListener("click", () => {
+  if (introTimer) window.clearInterval(introTimer);
+  advanceIntro(true);
+});
+
+introSkip?.addEventListener("click", () => {
+  if (introTimer) window.clearInterval(introTimer);
+  finishIntro(true);
+});
+
+startIntroFlow();
+
+if (siteIntro) {
+  window.setTimeout(() => {
+    modelLoaded = true;
+    finishIntro();
+  }, 9000);
+}
+
 bustModel?.addEventListener("load", () => {
+  modelLoaded = true;
   window.setTimeout(finishIntro, 650);
 });
 
 bustModel?.addEventListener("error", () => {
+  modelLoaded = true;
   window.setTimeout(finishIntro, 12000);
 });
 

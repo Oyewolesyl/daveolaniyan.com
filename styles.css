@@ -75,6 +75,31 @@ section { scroll-margin-top: 88px; }
   color: white;
   transition: opacity 420ms ease, visibility 420ms ease;
 }
+.intro-controls {
+  position: absolute;
+  top: max(14px, env(safe-area-inset-top));
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+.intro-controls button {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b0b0a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  font-size: 0.82rem;
+  font-weight: 840;
+  text-transform: lowercase;
+}
+.intro-skip {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: white !important;
+}
 .site-intro.is-done {
   opacity: 0;
   visibility: hidden;
@@ -93,15 +118,13 @@ section { scroll-margin-top: 88px; }
 }
 .intro-lines {
   position: absolute;
-  right: max(22px, 8vw);
-  bottom: max(28px, 9vh);
-  display: grid;
-  width: min(390px, calc(100vw - 44px));
-  gap: 8px;
+  inset: 0;
+  pointer-events: none;
 }
-.intro-lines p {
+.intro-line {
+  position: absolute;
   width: fit-content;
-  max-width: 100%;
+  max-width: min(360px, calc(100vw - 42px));
   padding: 10px 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 7px;
@@ -111,16 +134,29 @@ section { scroll-margin-top: 88px; }
   font-weight: 820;
   line-height: 1.25;
   opacity: 0;
-  transform: translateY(8px);
-  animation: introLine 420ms ease forwards;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 260ms ease, transform 260ms ease;
 }
-.intro-lines p:nth-child(2) { animation-delay: 480ms; }
-.intro-lines p:nth-child(3) { animation-delay: 960ms; }
-@keyframes introLine {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.intro-line.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.intro-line-one {
+  left: max(18px, 8vw);
+  top: 42%;
+}
+.intro-line-two {
+  right: max(18px, 8vw);
+  top: 34%;
+}
+.intro-line-three {
+  right: 50%;
+  bottom: max(24px, 9vh);
+  max-width: min(520px, calc(100vw - 42px));
+  transform: translate(50%, 8px) scale(0.98);
+}
+.intro-line-three.is-visible {
+  transform: translate(50%, 0) scale(1);
 }
 
 .topbar {
@@ -1209,15 +1245,29 @@ nav .is-active,
 @media (max-width: 680px) {
   body { padding-bottom: 96px; }
   .intro-lines {
-    position: static;
-    margin-top: 14px;
+    position: absolute;
+    inset: 0;
   }
-  .intro-lines p {
-    width: 100%;
+  .intro-line {
+    max-width: min(210px, calc(100vw - 28px));
+    padding: 8px 9px;
     font-size: 0.76rem;
   }
+  .intro-line-one {
+    left: 14px;
+    top: 38%;
+  }
+  .intro-line-two {
+    right: 14px;
+    top: 49%;
+  }
+  .intro-line-three {
+    right: 50%;
+    bottom: max(26px, 9vh);
+    max-width: calc(100vw - 28px);
+  }
   .intro-bust {
-    width: min(280px, 74vw);
+    width: min(280px, 70vw);
   }
   .site-intro {
     align-content: center;
