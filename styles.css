@@ -586,7 +586,7 @@ figcaption {
   color: #11100e;
 }
 [data-theme="dark"] .link-board a.naturepacks-tile {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.2);
   background: #ffffff;
   color: #11100e;
 }
@@ -594,6 +594,13 @@ figcaption {
 [data-theme="dark"] .naturepacks-tile .brand-mark {
   border: 1px solid rgba(17, 16, 14, 0.12);
   background: #ffffff;
+}
+.link-board .naturepacks-tile .brand-mark img,
+[data-theme="dark"] .link-board .naturepacks-tile .brand-mark img {
+  display: block;
+  width: 138px;
+  height: 48px;
+  object-fit: contain;
 }
 .link-board a.naturepacks-tile b {
   border-color: rgba(17, 16, 14, 0.18);
@@ -734,15 +741,6 @@ figcaption {
 [data-theme="dark"] .logo-dark {
   display: block;
 }
-.naturepacks-tile .logo-light,
-[data-theme="dark"] .naturepacks-tile .logo-light {
-  display: block;
-}
-.naturepacks-tile .logo-dark,
-[data-theme="dark"] .naturepacks-tile .logo-dark {
-  display: none;
-}
-
 .industry-switcher {
   display: grid;
   grid-template-columns: 1fr;
@@ -1662,6 +1660,11 @@ nav .is-active,
   .dealradar-tile .brand-mark img.logo-3d {
     width: 92px;
     height: 60px;
+  }
+  .link-board .naturepacks-tile .brand-mark img,
+  [data-theme="dark"] .link-board .naturepacks-tile .brand-mark img {
+    width: 82px;
+    height: 34px;
   }
   .link-board span {
     grid-column: 2;
