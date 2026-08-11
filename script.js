@@ -253,7 +253,7 @@ if (introImage && !introImage.complete) {
 
 introModel?.addEventListener("load", () => {
   siteIntro?.classList.add("intro-model-ready");
-  introModel.setAttribute("camera-orbit", "180deg 76deg 112%");
+  introModel.setAttribute("camera-orbit", "0deg 76deg 112%");
   if (introLoader && !assetsReady) introLoader.textContent = "model ready";
 });
 
@@ -264,7 +264,7 @@ introModel?.addEventListener("error", () => {
 
 bustModel?.addEventListener("load", () => {
   modelWelcome?.classList.add("model-loaded");
-  bustModel.setAttribute("camera-orbit", "180deg 76deg 112%");
+  bustModel.setAttribute("camera-orbit", "0deg 76deg 112%");
 });
 
 bustModel?.addEventListener("error", () => {
@@ -273,7 +273,7 @@ bustModel?.addEventListener("error", () => {
 
 experienceModel?.addEventListener("load", () => {
   experienceFace?.classList.add("experience-loaded");
-  experienceModel.setAttribute("camera-orbit", "180deg 76deg 116%");
+  experienceModel.setAttribute("camera-orbit", "0deg 76deg 116%");
 });
 
 experienceModel?.addEventListener("error", () => {
