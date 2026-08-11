@@ -8,7 +8,8 @@ const industryPanels = document.querySelectorAll("[data-industry-panel]");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const modelWelcome = document.querySelector(".model-welcome");
-const introImage = document.querySelector(".intro-bust img");
+const introImage = document.querySelector(".intro-poster");
+const introModel = document.querySelector(".intro-model");
 const bustModel = document.querySelector(".bust-model");
 const experienceFace = document.querySelector(".experience-face");
 const experienceModel = document.querySelector(".experience-model");
@@ -212,6 +213,15 @@ function waitForFile(url) {
   return withTimeout(fetch(url, { cache: "force-cache" }).catch(() => {}), 6500);
 }
 
+function waitForModel(model) {
+  if (!model) return Promise.resolve();
+  if (model.loaded) return Promise.resolve();
+  return withTimeout(new Promise((resolve) => {
+    model.addEventListener("load", resolve, { once: true });
+    model.addEventListener("error", resolve, { once: true });
+  }), 8500);
+}
+
 function setAssetsReady() {
   assetsReady = true;
   siteIntro?.classList.add("assets-ready");
@@ -227,8 +237,9 @@ async function waitForSiteAssets() {
   const videoTasks = [...document.querySelectorAll("video")].map(waitForVideo);
   const fontTask = document.fonts?.ready?.catch(() => {}) || Promise.resolve();
   const modelTask = waitForFile("./assets/experience/dave-bust.glb");
+  const introModelTask = waitForModel(introModel);
 
-  await withTimeout(Promise.allSettled([...imageTasks, ...videoTasks, fontTask, modelTask]), 10000);
+  await withTimeout(Promise.allSettled([...imageTasks, ...videoTasks, fontTask, modelTask, introModelTask]), 11000);
   setAssetsReady();
 }
 
@@ -240,9 +251,20 @@ if (introImage && !introImage.complete) {
   });
 }
 
+introModel?.addEventListener("load", () => {
+  siteIntro?.classList.add("intro-model-ready");
+  introModel.setAttribute("camera-orbit", "180deg 76deg 112%");
+  if (introLoader && !assetsReady) introLoader.textContent = "model ready";
+});
+
+introModel?.addEventListener("error", () => {
+  siteIntro?.classList.add("intro-model-failed");
+  if (introLoader && !assetsReady) introLoader.textContent = "still loading";
+});
+
 bustModel?.addEventListener("load", () => {
   modelWelcome?.classList.add("model-loaded");
-  bustModel.setAttribute("camera-orbit", "0deg 76deg 112%");
+  bustModel.setAttribute("camera-orbit", "180deg 76deg 112%");
 });
 
 bustModel?.addEventListener("error", () => {
@@ -251,7 +273,7 @@ bustModel?.addEventListener("error", () => {
 
 experienceModel?.addEventListener("load", () => {
   experienceFace?.classList.add("experience-loaded");
-  experienceModel.setAttribute("camera-orbit", "0deg 76deg 116%");
+  experienceModel.setAttribute("camera-orbit", "180deg 76deg 116%");
 });
 
 experienceModel?.addEventListener("error", () => {

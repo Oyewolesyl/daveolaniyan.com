@@ -25,9 +25,12 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="modulepreload" href="./assets/vendor/model-viewer.min.js" />
+    <link rel="preload" href="./assets/experience/dave-bust-welcome-static.gif" as="image" />
+    <link rel="preload" href="./assets/experience/dave-bust.glb" as="fetch" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="./assets/vendor/model-viewer.min.js"></script>
   </head>
   <body class="intro-active">
     <section class="site-intro" aria-label="Dave welcome">
@@ -36,7 +39,21 @@
         <button class="intro-skip" type="button">skip</button>
       </div>
       <div class="intro-bust">
-        <img src="./assets/experience/dave-bust-welcome-static.gif" alt="3D bust of Dave Olaniyan" />
+        <img class="intro-poster" src="./assets/experience/dave-bust-welcome-static.gif" alt="3D bust of Dave Olaniyan" />
+        <model-viewer
+          class="intro-model"
+          src="./assets/experience/dave-bust.glb"
+          alt="interactive 3D bust of Dave Olaniyan"
+          camera-controls
+          camera-orbit="180deg 76deg 112%"
+          min-camera-orbit="145deg 68deg 96%"
+          max-camera-orbit="215deg 84deg 130%"
+          disable-zoom
+          interaction-prompt="none"
+          shadow-intensity="0.65"
+          exposure="0.95"
+          loading="eager"
+        ></model-viewer>
       </div>
       <p class="intro-loader" aria-live="polite">loading assets</p>
       <div class="intro-lines">
@@ -80,14 +97,15 @@
                 src="./assets/experience/dave-bust.glb"
                 alt="interactive 3D bust of Dave Olaniyan"
                 camera-controls
-                camera-orbit="0deg 76deg 112%"
-                min-camera-orbit="-35deg 68deg 96%"
-                max-camera-orbit="35deg 84deg 130%"
+                camera-orbit="180deg 76deg 112%"
+                min-camera-orbit="145deg 68deg 96%"
+                max-camera-orbit="215deg 84deg 130%"
                 disable-zoom
                 interaction-prompt="none"
                 shadow-intensity="0.65"
                 exposure="0.95"
-                loading="lazy"
+                poster="./assets/experience/dave-bust-welcome-static.gif"
+                loading="eager"
               ></model-viewer>
               <p class="model-loading">loading model</p>
             </div>
@@ -172,13 +190,14 @@
               src="./assets/experience/dave-bust.glb"
               alt="interactive 3D bust of Dave Olaniyan"
               camera-controls
-              camera-orbit="0deg 76deg 116%"
-              min-camera-orbit="-35deg 68deg 98%"
-              max-camera-orbit="35deg 84deg 132%"
+              camera-orbit="180deg 76deg 116%"
+              min-camera-orbit="145deg 68deg 98%"
+              max-camera-orbit="215deg 84deg 132%"
               disable-zoom
               interaction-prompt="none"
               shadow-intensity="0.65"
               exposure="0.95"
+              poster="./assets/experience/dave-bust-welcome-static.gif"
               loading="lazy"
             ></model-viewer>
             <p class="model-loading">loading model</p>
