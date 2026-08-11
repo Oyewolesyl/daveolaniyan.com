@@ -158,11 +158,11 @@ function startIntroFlow() {
   introTimer = window.setInterval(() => {
     if (introIndex >= introLines.length - 1) {
       window.clearInterval(introTimer);
-      window.setTimeout(markIntroComplete, 1600);
+      window.setTimeout(markIntroComplete, 1900);
       return;
     }
     advanceIntro(false);
-  }, 1800);
+  }, 1450);
 }
 
 introNext?.addEventListener("click", () => {
