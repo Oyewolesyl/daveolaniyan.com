@@ -16,6 +16,7 @@ const siteIntro = document.querySelector(".site-intro");
 const introLines = [...document.querySelectorAll(".intro-line")];
 const introNext = document.querySelector(".intro-next");
 const introSkip = document.querySelector(".intro-skip");
+const introLoader = document.querySelector(".intro-loader");
 
 const cardUrl = "https://daveolaniyan-com.vercel.app";
 const shareData = {
@@ -118,11 +119,11 @@ function updateHeaderState() {
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-let modelLoaded = false;
+let assetsReady = false;
 let introComplete = false;
 
 function finishIntro(force = false) {
-  if (!force && (!modelLoaded || !introComplete)) return;
+  if (!force && (!assetsReady || !introComplete)) return;
   if (introTimer) window.clearInterval(introTimer);
   siteIntro?.classList.add("is-done");
   document.body.classList.remove("intro-active");
@@ -136,6 +137,7 @@ function showIntroLine(index) {
     line.classList.toggle("is-visible", lineIndex <= introIndex);
   });
   if (introNext) introNext.textContent = introIndex >= introLines.length - 1 ? "enter" : "next";
+  if (introSkip) introSkip.textContent = assetsReady ? "skip" : "skip asset loading";
 }
 
 function markIntroComplete(forceExit = false) {
@@ -177,23 +179,64 @@ introSkip?.addEventListener("click", () => {
 
 startIntroFlow();
 
-if (siteIntro) {
-  window.setTimeout(() => {
-    modelLoaded = true;
-    finishIntro();
-  }, 9000);
+function withTimeout(promise, timeoutMs) {
+  return new Promise((resolve) => {
+    const timeout = window.setTimeout(resolve, timeoutMs);
+    promise.finally(() => {
+      window.clearTimeout(timeout);
+      resolve();
+    });
+  });
 }
 
-if (introImage?.complete) {
-  modelLoaded = true;
-} else {
-  introImage?.addEventListener("load", () => {
-    modelLoaded = true;
-    finishIntro();
-  });
-  introImage?.addEventListener("error", () => {
-    modelLoaded = true;
-    finishIntro();
+function waitForImage(image) {
+  if (!image) return Promise.resolve();
+  if (image.complete && image.naturalWidth > 0) return image.decode?.().catch(() => {}) || Promise.resolve();
+  return withTimeout(new Promise((resolve) => {
+    image.addEventListener("load", resolve, { once: true });
+    image.addEventListener("error", resolve, { once: true });
+  }), 6500);
+}
+
+function waitForVideo(video) {
+  if (!video) return Promise.resolve();
+  if (video.readyState >= 1) return Promise.resolve();
+  return withTimeout(new Promise((resolve) => {
+    video.addEventListener("loadedmetadata", resolve, { once: true });
+    video.addEventListener("error", resolve, { once: true });
+  }), 6500);
+}
+
+function waitForFile(url) {
+  if (!url || !window.fetch) return Promise.resolve();
+  return withTimeout(fetch(url, { cache: "force-cache" }).catch(() => {}), 6500);
+}
+
+function setAssetsReady() {
+  assetsReady = true;
+  siteIntro?.classList.add("assets-ready");
+  if (introLoader) introLoader.textContent = "assets ready";
+  if (introSkip) introSkip.textContent = "skip";
+  finishIntro();
+}
+
+async function waitForSiteAssets() {
+  if (!siteIntro) return setAssetsReady();
+  if (introLoader) introLoader.textContent = "loading assets";
+  const imageTasks = [...document.images].map(waitForImage);
+  const videoTasks = [...document.querySelectorAll("video")].map(waitForVideo);
+  const fontTask = document.fonts?.ready?.catch(() => {}) || Promise.resolve();
+  const modelTask = waitForFile("./assets/experience/dave-bust.glb");
+
+  await withTimeout(Promise.allSettled([...imageTasks, ...videoTasks, fontTask, modelTask]), 10000);
+  setAssetsReady();
+}
+
+waitForSiteAssets();
+
+if (introImage && !introImage.complete) {
+  introImage.addEventListener("load", () => {
+    if (introLoader && !assetsReady) introLoader.textContent = "loading assets";
   });
 }
 

@@ -23,6 +23,9 @@
     <link rel="icon" type="image/png" sizes="48x48" href="./assets/icons/icon-48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/icon-180.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </head>
@@ -35,10 +38,11 @@
       <div class="intro-bust">
         <img src="./assets/experience/dave-bust-welcome-static.gif" alt="3D bust of Dave Olaniyan" />
       </div>
+      <p class="intro-loader" aria-live="polite">loading assets</p>
       <div class="intro-lines">
         <p class="intro-line intro-line-one is-visible">i am dave Olaniyan.</p>
         <p class="intro-line intro-line-two">a design engineer.</p>
-        <p class="intro-line intro-line-three">a design engineer connects product thinking, interface design, and software engineering so ideas can become usable systems.</p>
+        <p class="intro-line intro-line-three">a design engineer connects product thinking, interface design, and software engineering so ideas become usable systems.</p>
       </div>
     </section>
     <header class="topbar">
@@ -97,21 +101,21 @@
 
       <section id="work" class="work-card">
         <div class="work-head">
-          <p class="eyebrow">primary links</p>
+          <p class="eyebrow">work links</p>
           <h2>open the work.</h2>
-          <p>direct links to the public pages, stores, studios, and ventures people need first.</p>
+          <p>the public pages, stores, studios, and ventures people need first.</p>
         </div>
         <div class="link-board">
           <a href="https://ypod.vercel.app" target="_blank" rel="noreferrer">
             <img class="product-visual ypod-visual" src="./assets/work/ypod-landing-real.png" alt="" />
             <span>ypod landing page</span>
-            <small>consumer hardware, brand surface</small>
+            <small>sleep-focused audio brand, product positioning, launch page</small>
             <b>visit site</b>
           </a>
           <a href="https://ypod-store.vercel.app/shop" target="_blank" rel="noreferrer">
             <img class="product-visual ypod-visual" src="./assets/work/ypod-store-real.png" alt="" />
             <span>ypod store</span>
-            <small>commerce, product selection</small>
+            <small>commerce surface for product selection and purchase flow</small>
             <b>visit store</b>
           </a>
           <a class="brand-tile theme-logo-tile naturepacks-tile" href="https://www.naturepacks.org" target="_blank" rel="noreferrer">
@@ -120,34 +124,31 @@
               <img class="logo-dark" src="./assets/work/naturepacks-white-black.svg" alt="" />
             </div>
             <span>NaturePacks<sup>™</sup></span>
-            <small>sustainable packaging, Looped Innovation</small>
+            <small>sustainable paper packaging from banana and plantain fibre</small>
             <b>visit site</b>
           </a>
           <a class="brand-tile theme-logo-tile" href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">
             <div class="brand-mark">
-              <img class="logo-light" src="./assets/brand/yescode-main-black.svg" alt="" />
-              <img class="logo-dark" src="./assets/brand/yescode-main.svg" alt="" />
+              <img class="logo-3d" src="./assets/brand/yescode-3d.png" alt="" />
             </div>
             <span>yesCode</span>
-            <small>software studio, product builds</small>
+            <small>software studio for web apps, automation, dashboards, and AI tools</small>
             <b>visit studio</b>
           </a>
           <a class="brand-tile theme-logo-tile design-tile" href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">
             <div class="brand-mark">
-              <img class="logo-light" src="./assets/brand/yescode-design-dark.svg" alt="" />
-              <img class="logo-dark" src="./assets/brand/yescode-design-main.svg" alt="" />
+              <img class="logo-3d" src="./assets/brand/yescode-design-3d.png" alt="" />
             </div>
             <span>yesCode Design</span>
-            <small>product design, branding, interfaces</small>
+            <small>product design, branding, design systems, and interface direction</small>
             <b>visit studio</b>
           </a>
           <a class="brand-tile theme-logo-tile dealradar-tile" href="https://www.dealradarng.com" target="_blank" rel="noreferrer">
             <div class="brand-mark">
-              <img class="logo-light" src="./assets/work/dealradar-dark.svg" alt="" />
-              <img class="logo-dark" src="./assets/work/dealradar-light.svg" alt="" />
+              <img class="logo-3d" src="./assets/work/dealradar-3d.png" alt="" />
             </div>
             <span>DealRadarNG</span>
-            <small>affiliate commerce, deal discovery</small>
+            <small>affiliate commerce platform for deal discovery and retail campaigns</small>
             <b>visit site</b>
           </a>
         </div>
@@ -157,14 +158,14 @@
         <div>
           <p class="eyebrow">experience</p>
           <h2>move by experience.</h2>
-          <p>choose the part of the profile you want to inspect: software, product, design, AI, sustainability, real estate, commerce, or public-facing experience.</p>
+          <p>choose the part of the profile you want to inspect: software, product, design, ai, sustainability, real estate, commerce, or professional record.</p>
         </div>
         <div class="experience-orbit" role="tablist" aria-label="Practice domains">
           <div class="industry-tabs industry-tabs-left">
             <button class="is-active" type="button" data-industry-link="tech">software</button>
             <button type="button" data-industry-link="product">product</button>
             <button type="button" data-industry-link="design">design</button>
-            <button type="button" data-industry-link="ai">AI</button>
+            <button type="button" data-industry-link="ai">ai</button>
           </div>
           <div class="experience-face" aria-label="interactive Dave experience model">
             <model-viewer
@@ -196,7 +197,7 @@
         <div class="section-copy">
           <p class="eyebrow">software, product</p>
           <h2>software shipped as usable systems.</h2>
-          <p>through yesCode i build websites, dashboards, admin tools, automation workflows, AI-assisted interfaces, PWAs, and production web apps.</p>
+          <p>through yesCode i build websites, dashboards, admin tools, automation workflows, ai-assisted interfaces, PWAs, and production web apps.</p>
           <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">open yesCode</a>
         </div>
         <div class="media-pair">
@@ -232,8 +233,8 @@
       <section id="ai" class="industry-section reverse-section" data-industry-panel="ai">
         <div class="section-copy">
           <p class="eyebrow">artificial intelligence</p>
-          <h2>AI-enabled products and engineering workflows.</h2>
-          <p>prompt systems, automation, LLM integrations, engineering review tools, AI-assisted workflows, and MCP implementations. part of the AI Entrepreneurial Leadership Program by Innov8 Hub in partnership with UniStream.</p>
+          <h2>ai-enabled products and engineering workflows.</h2>
+          <p>prompt systems, automation, LLM integrations, engineering review tools, ai-assisted workflows, and MCP implementations. part of the AI Entrepreneurial Leadership Program by Innov8 Hub in partnership with UniStream.</p>
           <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">open yesCode</a>
         </div>
         <div class="media-pair">
@@ -250,8 +251,7 @@
           <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">open yesCode Design</a>
         </div>
         <div class="logo-wall">
-          <img class="logo-light" src="./assets/brand/yescode-design-dark.svg" alt="yesCode Design logo" />
-          <img class="logo-dark" src="./assets/brand/yescode-design-main.svg" alt="yesCode Design logo" />
+          <img class="logo-3d" src="./assets/brand/yescode-design-3d.png" alt="yesCode Design logo" />
         </div>
       </section>
 
@@ -332,7 +332,7 @@
         <div class="commerce-links">
           <a href="https://ypod.vercel.app/" target="_blank" rel="noreferrer"><img src="./assets/work/ypod-landing-real.png" alt="" /><span>ypod landing</span></a>
           <a href="https://ypod-store.vercel.app/shop" target="_blank" rel="noreferrer"><img src="./assets/work/ypod-commerce-real.png" alt="" /><span>ypod store</span></a>
-          <a class="dark-commerce" href="https://www.dealradarng.com/" target="_blank" rel="noreferrer"><img class="logo-light" src="./assets/work/dealradar-dark.svg" alt="" /><img class="logo-dark" src="./assets/work/dealradar-light.svg" alt="" /><span>DealRadarNG</span></a>
+          <a class="dark-commerce" href="https://www.dealradarng.com/" target="_blank" rel="noreferrer"><img class="logo-3d" src="./assets/work/dealradar-3d.png" alt="" /><span>DealRadarNG</span></a>
         </div>
       </section>
 
@@ -414,7 +414,7 @@
 
       <section id="media" class="profile-context" aria-label="Dave Olaniyan working contexts">
         <div>
-          <p class="eyebrow">working context</p>
+          <p class="eyebrow">work rooms</p>
           <h2>where the work has happened.</h2>
           <p>product rooms, design reviews, material experiments, site inspections, commerce builds, and professional programs.</p>
         </div>
@@ -431,7 +431,7 @@
           <p class="eyebrow">profile</p>
           <h2>dave Olaniyan</h2>
           <p>
-            design engineer, product builder, software engineer, and founder with a B.Sc. in Geography and Environmental Studies.
+            design engineer, product builder, software engineer, and founder with a B.Sc. in geography and environmental studies.
             i study the field, map the system, then build the product, interface, brand, or page that makes it usable.
           </p>
         </div>
@@ -441,7 +441,7 @@
           <p>design engineering</p>
           <p>UI/UX design</p>
           <p>branding</p>
-          <p>AI-assisted products</p>
+          <p>ai-assisted products</p>
           <p>automation</p>
           <p>full-stack development</p>
           <p>creative direction</p>
@@ -451,7 +451,7 @@
       <section id="contact" class="contact">
         <div>
           <p class="eyebrow">contact</p>
-          <h2>software, design, commerce, sustainability, and field-informed builds.</h2>
+          <h2>send the brief, the role, or the link.</h2>
         </div>
         <div class="contact-links">
           <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
