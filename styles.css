@@ -598,8 +598,8 @@ figcaption {
 .link-board .naturepacks-tile .brand-mark img,
 [data-theme="dark"] .link-board .naturepacks-tile .brand-mark img {
   display: block;
-  width: 138px;
-  height: 48px;
+  width: 132px;
+  height: 42px;
   object-fit: contain;
 }
 .link-board a.naturepacks-tile b {
@@ -1663,8 +1663,8 @@ nav .is-active,
   }
   .link-board .naturepacks-tile .brand-mark img,
   [data-theme="dark"] .link-board .naturepacks-tile .brand-mark img {
-    width: 82px;
-    height: 34px;
+    width: 78px;
+    height: 28px;
   }
   .link-board span {
     grid-column: 2;

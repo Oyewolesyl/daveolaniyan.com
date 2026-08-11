@@ -1,9 +1,0 @@
-﻿<svg width="640" height="140" viewBox="0 0 640 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <title>NaturePacks logo</title>
-  <rect width="640" height="140" fill="none"/>
-  <text x="38" y="86" fill="#5A3E27" font-family="Manrope, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-4">Nature</text>
-  <text x="315" y="86" fill="#254313" font-family="Fraunces, Georgia, serif" font-size="74" font-weight="700" letter-spacing="-4">Packs</text>
-  <text x="575" y="52" fill="#5A3E27" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="800">TM</text>
-  <path d="M335 96C390 78 435 75 490 96" stroke="#687527" stroke-width="5" stroke-linecap="round"/>
-  <path d="M342 106C391 93 432 92 479 108" stroke="#C1A38B" stroke-width="3" stroke-linecap="round" opacity=".9"/>
-</svg>
